@@ -3,6 +3,7 @@
 1. let's try local storage extension DONE
 2. think of how to organize/use the modules we have created
 3. need to get the modules working before placing them in a UI
+4. we will create the todos creator first then go from there
 
 
 
