@@ -30,17 +30,17 @@ modules:
 4. Todos manager, manages the logic of todos
 5. index.js
 
-~~~ Todos creator ~~~ DONE
-1. exports to index.js
-2. a constructor/class that creates an object with title, description, dueDate and priority. You might also want to include notes or even a checklist
-
 ~~~ Todos manager ~~~
 1. export to index.js
 2. use todos-creator to make todos
 3. store created todos in local storage using Todos storer
 4. update todos data in local storage using Todos updater
 
-~~~ Todos storer ~~~
+~~~ Todos creator ~~~ DONE
+1. exports to index.js
+2. a constructor/class that creates an object with title, description, dueDate and priority. You might also want to include notes or even a checklist
+
+~~~ Todos storer ~~~ NEXT
 1. takes a todo object and stores it locally
 
 ~~~ Todos updater ~~~
