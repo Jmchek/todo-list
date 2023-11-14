@@ -29,5 +29,5 @@ function makeTodo(someName) {
 
 let testClassGrbbr = document.querySelector(".testClass");
 testClassGrbbr.addEventListener("click", x => {
-    console.log(makeTodo("Joe"));
+    console.log(localStorage.colorSetting);
 });

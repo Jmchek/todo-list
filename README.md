@@ -30,7 +30,7 @@ modules:
 4. Todos manager, manages the logic of todos
 5. index.js
 
-~~~ Todos creator ~~~
+~~~ Todos creator ~~~ DONE
 1. exports to index.js
 2. a constructor/class that creates an object with title, description, dueDate and priority. You might also want to include notes or even a checklist
 
