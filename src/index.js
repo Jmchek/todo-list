@@ -17,4 +17,17 @@ let user = new Todos("Joe");
 
 console.log(user);
 console.log(typeof(user));
-console.log(user.sayHi(title));
+
+
+
+function makeTodo(someName) {
+    let someTodo = new Todos(someName);
+
+    return someTodo.title;
+}
+
+
+let testClassGrbbr = document.querySelector(".testClass");
+testClassGrbbr.addEventListener("click", x => {
+    console.log(makeTodo("Joe"));
+});
