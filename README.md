@@ -46,7 +46,7 @@ modules:
 1. takes a todo object as a parameter
 2. take the object and stores it locally under the title?
 
-~~~ Todos updater ~~~
+~~~ Todos updater ~~~ NEXT
 1. exports to index.js
 2. updates any key/value pairs in a locally stored todos
 
