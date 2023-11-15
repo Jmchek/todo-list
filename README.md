@@ -41,7 +41,9 @@ modules:
 2. a constructor/class that creates an object with title, description, dueDate and priority. You might also want to include notes or even a checklist
 
 ~~~ Todos storer ~~~ NEXT
-1. takes a todo object and stores it locally
+1. stores a todo object locally
+1. takes a todo object as a parameter
+2. take the object and stores it locally under the title?
 
 ~~~ Todos updater ~~~
 1. exports to index.js
