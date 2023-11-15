@@ -2,17 +2,17 @@ import Todos from "./todos-creator.js";
 import todosStorer from "./todos-storer.js";
 
 //example of local storage working, can remove
-localStorage.colorSetting = "#a4509b";
+// localStorage.colorSetting = "#a4509b";
 
-console.log(localStorage.colorSetting);
+// console.log(localStorage.colorSetting);
 
-localStorage.colorSetting = "hello there";
+// localStorage.colorSetting = "hello there";
 
-console.log(localStorage.colorSetting);
+// console.log(localStorage.colorSetting);
 
 
 //testing here
-let user = new Todos("Joe");
+let user = new Todos("Barney", "foo", "bar");
 
 
 
@@ -24,14 +24,14 @@ user.notes = "hothead";
 
 
 
-function makeTodo(someName) {
-    let someTodo = new Todos(someName);
+// function makeTodo(someName) {
+//     let someTodo = new Todos(someName);
 
-    return someTodo;
-}
+//     return someTodo;
+// }
 
 
 let testClassGrbbr = document.querySelector(".testClass");
 testClassGrbbr.addEventListener("click", x => {
-    todosStorer(makeTodo("Barney", "foo", "bar"));
+    todosStorer(user);
 });

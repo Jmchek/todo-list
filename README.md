@@ -4,6 +4,7 @@
 2. think of how to organize/use the modules we have created
 3. need to get the modules working before placing them in a UI
 4. we will create the todos creator first then go from there
+5. now working on todos-storer.js
 
 
 
@@ -40,7 +41,7 @@ modules:
 1. exports to index.js
 2. a constructor/class that creates an object with title, description, dueDate and priority. You might also want to include notes or even a checklist
 
-~~~ Todos storer ~~~ NEXT
+~~~ Todos storer ~~~ DONE
 1. stores a todo object locally
 1. takes a todo object as a parameter
 2. take the object and stores it locally under the title?
