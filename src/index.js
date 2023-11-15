@@ -1,6 +1,7 @@
 import Todos from "./todos-creator.js";
 import todosStorer from "./todos-storer.js";
-import todosUpdater from "./todos-updater.js";
+import todosUpdater from "./todos-remover.js";
+import todosRemover from "./todos-remover.js";
 
 //example of local storage working, can remove
 // localStorage.colorSetting = "#a4509b";
@@ -34,5 +35,7 @@ user.notes = "hothead";
 
 let testClassGrbbr = document.querySelector(".testClass");
 testClassGrbbr.addEventListener("click", x => {
-    todosUpdater();
+    todosStorer(user);
+    console.log(localStorage);
+    todosRemover(user);
 });

@@ -5,7 +5,7 @@
 3. need to get the modules working before placing them in a UI
 4. we will create the todos creator first then go from there
 5. now working on todos-storer.js
-
+6. something new has come up while working on todos-storer.js...localStorage is read-only, so we will have to just add/retrieve data instead of CRUD
 
 
 
@@ -35,7 +35,7 @@ modules:
 1. export to index.js
 2. use todos-creator to make todos
 3. store created todos in local storage using Todos storer
-4. update todos data in local storage using Todos updater
+4. remove a todos data in local storage using Todos remover
 
 ~~~ Todos creator ~~~ DONE
 1. exports to index.js
@@ -46,9 +46,9 @@ modules:
 1. takes a todo object as a parameter
 2. take the object and stores it locally under the title?
 
-~~~ Todos updater ~~~ NEXT
-1. exports to index.js
-2. updates any key/value pairs in a locally stored todos
+~~~ Todos remover ~~~ NEXT
+1. For now, will remove requested todo from storage
+2. the idea being, mark todo as complete (UI), then can remove with remover
 
 ~~~ Projects creator ~~~
 1. exports to index.js
