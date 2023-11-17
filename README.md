@@ -36,7 +36,7 @@ modules:
 ~~~ Todos manager ~~~ NEXT
 1. export to index.js
 2. use todos-creator to make todos
-3. store created todos in local storage using Todos storer
+3. store created todos in a project using Todos storer
 4. remove a todos data in local storage using Todos remover
 
 ~~~ Todos creator ~~~ DONE
@@ -61,11 +61,11 @@ modules:
 2. manage the storing and retrieving of projects in storage
 2. use projects-creator to make projects
 3. store created projects in local storage using Projects storer
-4. update projects data in local storage using Projects updater
+4. remove projects data in local storage using Projects remover
 
-~~~ Projects updater ~~~
+~~~ Projects remover ~~~
 1. exports to index.js
-2. updates any key/value pairs in a locally stored project
+2. removes any projects object in a locally stored project
 
 ~~~ Projects storer ~~~
 1. takes a project object and stores it locally
