@@ -52,7 +52,7 @@ modules:
 1. For now, will remove requested todo from storage
 2. the idea being, mark todo as complete (UI), then can remove with remover
 
-~~~ Projects creator ~~~ NEXT
+~~~ Projects creator ~~~ DONE
 1. exports to index.js
 2. a constructor/class that creates an object with title, progress, and priority that we will add objects to (todos)
 
@@ -67,5 +67,5 @@ modules:
 1. exports to index.js
 2. removes any projects object in a locally stored project
 
-~~~ Projects storer ~~~
+~~~ Projects storer ~~~ NEXT
 1. takes a project object and stores it locally
