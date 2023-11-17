@@ -63,9 +63,9 @@ modules:
 3. store created projects in local storage using Projects storer
 4. remove projects data in local storage using Projects remover
 
-~~~ Projects remover ~~~
+~~~ Projects remover ~~~ DONE
 1. exports to index.js
 2. removes any projects object in a locally stored project
 
-~~~ Projects storer ~~~ NEXT
+~~~ Projects storer ~~~ DONE
 1. takes a project object and stores it locally

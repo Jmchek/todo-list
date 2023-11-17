@@ -2,6 +2,8 @@ import todosManager from "./todos-manager.js";
 import Todos from "./todos-creator.js";
 import Projects from "./projects-creator.js";
 import projectsStorer from "./projects-storer.js";
+import projectsRemover from "./projects-remover.js";
+
 //example of local storage working, can remove
 // localStorage.colorSetting = "#a4509b";
 
@@ -40,4 +42,6 @@ let testClassGrbbr = document.querySelector(".testClass");
 testClassGrbbr.addEventListener("click", x => {
     projectsStorer(someProject);
     console.log(localStorage);
+    // projectsRemover(someProject);
+    // console.log(localStorage);
 });
