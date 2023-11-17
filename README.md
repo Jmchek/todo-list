@@ -33,7 +33,7 @@ modules:
 4. Todos manager, manages the logic of todos
 5. index.js
 
-~~~ Todos manager ~~~ NEXT
+~~~ Todos manager ~~~ DONE FOR NOW
 1. export to index.js
 2. use todos-creator to make todos
 3. store created todos in a project using Todos storer
@@ -52,7 +52,7 @@ modules:
 1. For now, will remove requested todo from storage
 2. the idea being, mark todo as complete (UI), then can remove with remover
 
-~~~ Projects creator ~~~
+~~~ Projects creator ~~~ NEXT
 1. exports to index.js
 2. a constructor/class that creates an object with title, progress, and priority that we will add objects to (todos)
 

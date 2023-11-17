@@ -1,5 +1,6 @@
 import todosManager from "./todos-manager.js";
 import Todos from "./todos-creator.js";
+import Projects from "./projects-creator.js";
 //example of local storage working, can remove
 // localStorage.colorSetting = "#a4509b";
 
@@ -12,6 +13,9 @@ import Todos from "./todos-creator.js";
 
 //testing here
 let user = new Todos("Barney", "foo", "bar", "foo", "bar", "foo");
+let user2 = new Todos("Gumpy", "foo", "bar", "foo", "bar", "foo");
+let user3 = new Todos("Kleetus", "foo", "bar", "foo", "bar", "foo");
+let someProject = new Projects("Barney", "foo", "bar", user);
 
 
 
@@ -20,6 +24,7 @@ let user = new Todos("Barney", "foo", "bar", "foo", "bar", "foo");
 // console.log(user.title);
 // console.log(user.notes);
 user.notes = "hothead";
+someProject.todos = {user, user2, user3};
 
 
 
@@ -32,5 +37,5 @@ user.notes = "hothead";
 
 let testClassGrbbr = document.querySelector(".testClass");
 testClassGrbbr.addEventListener("click", x => {
-    todosManager(user);
+    console.log(someProject);
 });
