@@ -56,7 +56,7 @@ modules:
 1. exports to index.js
 2. a constructor/class that creates an object with title, progress, and priority that we will add objects to (todos)
 
-~~~ Projects manager ~~~
+~~~ Projects manager ~~~ DONE FOR NOW
 1. exports to index.js
 2. manage the storing and retrieving of projects in storage
 2. use projects-creator to make projects
