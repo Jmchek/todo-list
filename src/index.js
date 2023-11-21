@@ -3,6 +3,8 @@ import todosManager from "./todos-manager.js";
 import Projects from "./projects-creator.js";
 import projectsManager from "./projects-manager.js";
 
+import saveFormData from "./form-storer.js";
+
 //example of local storage working, can remove
 // localStorage.colorSetting = "#a4509b";
 
@@ -39,23 +41,23 @@ someProject.todos = {user, user2, user3};
 
 let testClassGrbbr = document.querySelector(".testClass");
 testClassGrbbr.addEventListener("click", x => {
-    projectsManager(someProject);
+    // projectsManager(someProject);
 });
 
-document.getElementById('formTemplate').addEventListener('submit', function(event) {
-    event.preventDefault();
+// document.getElementById('formTemplate').addEventListener('submit', function(event) {
+//     event.preventDefault();
 
-    const title = document.getElementById('title').value;
-    const description = document.getElementById('description').value;
-    const dueDate = document.getElementById('dueDate').value;
+//     const title = document.getElementById('title').value;
+//     const description = document.getElementById('description').value;
+//     const dueDate = document.getElementById('dueDate').value;
 
-    const formData = {
-        title: title,
-        description: description,
-        dueDate: dueDate
-    };
+//     const formData = {
+//         title: title,
+//         description: description,
+//         dueDate: dueDate
+//     };
 
-    console.log(formData);
+//     console.log(formData);
 
-    // saveFormData(formData);
-});
+//     // saveFormData(formData);
+// });

@@ -1,17 +1,20 @@
-document.getElementById('registrationForm').addEventListener('submit', function(event) {
+document.getElementById('formTemplate').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const fullName = document.getElementById('fullName').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    const title = document.getElementById('title').value;
+    const description = document.getElementById('description').value;
+    const dueDate = document.getElementById('dueDate').value;
 
     const formData = {
-        fullName: fullName,
-        email: email,
-        password: password
+        title: title,
+        description: description,
+        dueDate: dueDate
     };
 
-    saveFormData(formData);
+    console.log(formData);
+    console.log("saveFormData is working");
+
+    // saveFormData(formData);
 });
 
 function saveFormData(formData) {
