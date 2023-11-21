@@ -8,7 +8,10 @@
 6. something new has come up while working on todos-storer.js...localStorage is read-only, so we will have to just add/retrieve data instead of CRUD
 7. todos-updater now changed to todos-remover to reflect this change
 8. now we will incorporate the todos modules into todos-manager
-
+9. did the same but for all projects
+10. now have to create a form to gather user data inputs (maybe a module that creats html forms whenever needed, like we just added a todo)
+11. write up form-creator.js file, first in html
+12. when the user hits submit (complete?), we will fire form-storer to get the data to process then use todos-storer.js module to take the new data into localstorage
 
 
 UX/UI stuff
@@ -69,3 +72,7 @@ modules:
 
 ~~~ Projects storer ~~~ DONE
 1. takes a project object and stores it locally
+
+
+~~~ Form creator ~~~
+1. form-creator.js will create an html form and append it to a target object
