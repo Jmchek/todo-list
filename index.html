@@ -25,8 +25,22 @@
         <label for="notes">Notes:</label>
         <textarea id="notes"></textarea>
 
-        <label for="checklist">Checklist:</label>
-        <input type="checkbox" name="checklist">
+        <!-- <label for="checklist">Checklist:</label>
+        <input type="checkbox" name="checklist"> -->
+
+        <fieldset id="checklist">
+            <legend>Checklist:</legend>
+          
+            <div>
+              <input type="checkbox" id="choice1" name="choice1" value="choice1"/>
+              <label for="choice1">First Choice</label>
+            </div>
+          
+            <div>
+              <input type="checkbox" id="choice2" name="choice2" value="choice2"/>
+              <label for="choice2">Second Choice</label>
+            </div>
+          </fieldset>
 
         <button type="submit">Submit</button>
     </form>
