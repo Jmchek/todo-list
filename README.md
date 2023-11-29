@@ -11,8 +11,8 @@
 9. did the same but for all projects
 10. now have to create a form to gather user data inputs (maybe a module that creats html forms whenever needed, like we just added a todo)
 11. write up form-creator.js file, first in html
-12. when the user hits submit (complete?), we will fire form-storer to get the data to process then use todos-storer.js module to take the new data into localstorage
-
+12. when the user hits submit (complete?), we will fire form-storer to get the data to process then use todos-storer.js module to take the new data into localstorage if it's a todo, projects-storer.js will do the same for projects, etc
+13. GOAL: get projects-storer and todos-storer working without ui, take the form data and store it under a "project", then take another form data and store under same project
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon
@@ -78,4 +78,4 @@ modules:
 1. form-creator.js will create an html form and append it to a target object
 
 ~~~ form storer ~~~
-1. receive data from form for a todos
+1. receive data from a form and store it either into an already existing project or create a new project
