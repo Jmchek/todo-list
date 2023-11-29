@@ -1,3 +1,5 @@
+import todosStorer from "./todos-storer";
+
 document.getElementById('formTemplate').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -14,13 +16,13 @@ document.getElementById('formTemplate').addEventListener('submit', function(even
     console.log(formData);
     console.log("saveFormData is working");
 
-    // saveFormData(formData);
+    todosStorer(formData);
 });
 
-function saveFormData(formData) {
-    const storedFormData = JSON.parse(localStorage.getItem('formData')) || [];
+// function saveFormData(formData) {
+//     const storedFormData = JSON.parse(localStorage.getItem('formData')) || [];
 
-    storedFormData.push(formData);
+//     storedFormData.push(formData);
 
-    localStorage.setItem('formData', JSON.stringify(storedFormData));
-}
+//     localStorage.setItem('formData', JSON.stringify(storedFormData));
+// }

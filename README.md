@@ -76,3 +76,6 @@ modules:
 
 ~~~ Form creator ~~~
 1. form-creator.js will create an html form and append it to a target object
+
+~~~ form storer ~~~
+1. receive data from form for a todos
