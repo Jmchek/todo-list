@@ -20,11 +20,11 @@ document.getElementById('formTemplate').addEventListener('submit', function(even
         checklist : checklist
     };
 
-    console.log(formData);
-    console.log("saveFormData is working");
+    // console.log(formData);
+    // console.log("saveFormData is working");
 
     // if it's a todo LOGIC HERE
-    todosStorer(formData);
+    // todosStorer(formData);
     // else if it's a project
     //projectsStorer(formData);
 });

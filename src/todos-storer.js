@@ -1,8 +1,8 @@
 export default function todosStorer(someTodo) {
-    const storedFormData = JSON.parse(localStorage.getItem(someTodo.title)) || [];
+    const storedFormData = JSON.parse(localStorage.getItem(someTodo.project)) || [];
 
     storedFormData.push(someTodo);
 
-    localStorage.setItem(someTodo.title, JSON.stringify(storedFormData));
+    localStorage.setItem(someTodo.project, JSON.stringify(storedFormData));
 
 }

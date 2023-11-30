@@ -1,6 +1,7 @@
 export default class Todos {
 
-    constructor(title, description, dueDate, priority, notes, checklist) {
+    constructor(project,title, description, dueDate, priority, notes, checklist) {
+      this.project = project;
       this.title = title;
       this.description = description;
       this.dueDate = dueDate;
@@ -10,6 +11,10 @@ export default class Todos {
     }
 
     //GET
+    get project() {
+      return this._project;
+    }
+
     get title() {
       return this._title;
     }
@@ -35,6 +40,10 @@ export default class Todos {
     }
     
     //SET
+    set project(value) {
+      this._project = value;
+    }
+
     set title(value) {
       this._title = value;
     }
