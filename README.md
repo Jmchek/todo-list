@@ -16,6 +16,8 @@
 14. todos are now stored under the project name as the 'key', we would have to find the project name somehow
 15. seems like we have todos-storer.js and projects-storer.js working correctly in storing locally 
 16. GOAL: be able to delete todos and projects from local storage
+17. due to the nature of local storage, we will now store todos by the project-name+{number} (e.g. shopping1, shopping2), commence refactoring
+18. need to figure out how to store it
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon

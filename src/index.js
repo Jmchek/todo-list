@@ -87,5 +87,5 @@ document.getElementById('formTemplate').addEventListener('submit', function(even
     console.log(formData);
 
     todosStorer(formData);
-    projectsStorer(someProject);
+    // projectsStorer(someProject);
 });
