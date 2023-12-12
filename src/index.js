@@ -7,38 +7,14 @@ import saveFormData from "./form-storer.js";
 import todosStorer from "./todos-storer.js";
 import projectsStorer from "./projects-storer.js";
 
-//example of local storage working, can remove
-// localStorage.colorSetting = "#a4509b";
-
-// console.log(localStorage.colorSetting);
-
-// localStorage.colorSetting = "hello there";
-
-// console.log(localStorage.colorSetting);
-
-
 //testing here
 let user = new Todos("Barney", "foo", "bar", "foo", "bar", "foo");
 let user2 = new Todos("Gumpy", "foo", "bar", "foo", "bar", "foo");
 let user3 = new Todos("Kleetus", "foo", "bar", "foo", "bar", "foo");
 let someProject = new Projects("test", "foo", "bar", user);
 
-
-
-// console.log(user);
-// console.log(typeof(user));
-// console.log(user.title);
-// console.log(user.notes);
 user.notes = "hothead";
-someProject.todos = {user, user2, user3};
-
-
-
-// function makeTodo(someName) {
-//     let someTodo = new Todos(someName);
-
-//     return someTodo;
-// }
+someProject.todos = [user, user2, user3];
 
 
 let testClassGrbbr = document.querySelector(".testClass");
@@ -46,23 +22,13 @@ testClassGrbbr.addEventListener("click", x => {
     // projectsManager(someProject);
 });
 
-// document.getElementById('formTemplate').addEventListener('submit', function(event) {
-//     event.preventDefault();
+// console.log(JSON.parse(localStorage.getItem('test'))[2]);
+// // localStorage.getItem('test')[2].todos[1] = user3;
+// console.log(JSON.parse(localStorage.getItem('test'))[2]._todos);
 
-//     const title = document.getElementById('title').value;
-//     const description = document.getElementById('description').value;
-//     const dueDate = document.getElementById('dueDate').value;
+// JSON.parse(localStorage.getItem('test'))[2]._todos.push('test');
 
-//     const formData = {
-//         title: title,
-//         description: description,
-//         dueDate: dueDate
-//     };
-
-//     console.log(formData);
-
-//     saveFormData(formData);
-// });
+// console.log(JSON.parse(localStorage.getItem('test'))[2]._todos);
 
 document.getElementById('formTemplate').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -84,8 +50,20 @@ document.getElementById('formTemplate').addEventListener('submit', function(even
         checklist : checklist
     };
 
-    console.log(formData);
-
     todosStorer(formData);
     // projectsStorer(someProject);
+
+    let existing = localStorage.getItem('test');
+// existing = existing ? existing.split(',') : [];
+existing.push(JSON.stringify(user));
+// localStorage.setItem('test', existing.toString());
+
+console.log(localStorage);
+
+    // for (let i in localStorage.getItem('test')) {
+    //     i++
+    //     for (let j in localStorage.getItem('test')[i].models) {
+    //       x += myObj.cars[i].models[j];
+    //     }
+    //   }
 });

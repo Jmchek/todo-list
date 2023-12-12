@@ -18,6 +18,11 @@
 16. GOAL: be able to delete todos and projects from local storage
 17. due to the nature of local storage, we will now store todos by the project-name+{number} (e.g. shopping1, shopping2), commence refactoring
 18. need to figure out how to store it
+19. todos-storer.js is now working correctly, time to code removing the todos with todos-remover.js
+20. projects will function like array/objects in which they will have a "count" of todos in them, and just like arrays we can splice (w/e it's called) and push the others into formation
+21. having said that, todos-storer should be refactored from sequenced adding to finding the project under the key and locating the count within the project object for the todo in question, e.g. remove todo#3 > project.todos.count > project.todos.splice[2, 4] > we need to refactor todos-storer.js AGAIN
+22. we're testing in index.js to try to change a todo within a project without storing multiple projects
+23. what if we have a key for a project, and the value is an array we store to, the first 5 or so entries are the todo properties and the rest of the array are todos added to the project? Need to convert code to support this, try the storer modules
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon
