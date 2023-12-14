@@ -23,6 +23,11 @@
 21. having said that, todos-storer should be refactored from sequenced adding to finding the project under the key and locating the count within the project object for the todo in question, e.g. remove todo#3 > project.todos.count > project.todos.splice[2, 4] > we need to refactor todos-storer.js AGAIN
 22. we're testing in index.js to try to change a todo within a project without storing multiple projects
 23. what if we have a key for a project, and the value is an array we store to, the first 5 or so entries are the todo properties and the rest of the array are todos added to the project? Need to convert code to support this, try the storer modules
+24. what we learned from testing is that we can do #23 and store all of the project into one key/value pair. To remove a todo, we will copy the project into an array, iterate over the array to determine which one to remove (e.g. user clicks on todo, we mark the event and which # it is in the array and proceed to use todos-remover.js to find it and delete it). Double confirmed by splicing one thing out of the array, as well as several others.
+25.  GOAL: be able to delete todos and projects from local storage DONE
+26. What's next? NEW GOAL: be able to effectively store user inputs pulled in from the form, and remove them
+27. fixing up todos-remover.js to correctly seek out a todo within a project and remove it DONE
+28. What's next? Now that we have the storers and removers working correctly, we will have to work on the form to work 100%, we are trying to figure out the checklist area in that the goal is for it to be dynamic. Ultimate goal is for the form to be in a js module to be dynamic
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon

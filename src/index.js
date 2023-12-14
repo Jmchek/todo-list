@@ -6,11 +6,14 @@ import projectsManager from "./projects-manager.js";
 import saveFormData from "./form-storer.js";
 import todosStorer from "./todos-storer.js";
 import projectsStorer from "./projects-storer.js";
+import todosRemover from "./todos-remover.js";
+import projectsRemover from "./projects-remover.js";
 
 //testing here
 let user = new Todos("Barney", "foo", "bar", "foo", "bar", "foo");
 let user2 = new Todos("Gumpy", "foo", "bar", "foo", "bar", "foo");
 let user3 = new Todos("Kleetus", "foo", "bar", "foo", "bar", "foo");
+let user4 = new Todos("test", "test", "bar", "foo", "bar", "foo");
 let someProject = new Projects("test", "foo", "bar", user);
 
 user.notes = "hothead";
@@ -50,15 +53,22 @@ document.getElementById('formTemplate').addEventListener('submit', function(even
         checklist : checklist
     };
 
-    todosStorer(formData);
+    // todosStorer(formData);
     // projectsStorer(someProject);
 
-    let existing = localStorage.getItem('test');
-// existing = existing ? existing.split(',') : [];
-existing.push(JSON.stringify(user));
-// localStorage.setItem('test', existing.toString());
+// console.log(localStorage);
+// console.log(JSON.parse(localStorage.getItem('test')));
+// console.log(JSON.parse(localStorage.getItem('test')).find(x => x.title == 'test' ));
 
-console.log(localStorage);
+    // let test = JSON.parse(localStorage.getItem('test'));
+    
+    // for (let i = 0; i < test.length; i++) {
+    //     if (test[i] == 'hello pls work') {
+    //         test.splice(i, 1);
+    //     }
+    // }
+    
+    // localStorage.setItem('test', JSON.stringify(test));
 
     // for (let i in localStorage.getItem('test')) {
     //     i++
@@ -67,3 +77,5 @@ console.log(localStorage);
     //     }
     //   }
 });
+
+projectsStorer(someProject);

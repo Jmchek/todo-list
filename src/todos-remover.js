@@ -1,16 +1,15 @@
 export default function todosRemover(someTodo) {
 
-    localStorage.removeItem(someTodo.title);
+    const storedFormData = JSON.parse(localStorage.getItem(someTodo.project)) || [];
+
+    storedFormData.forEach((x, index) => {
+        console.log(x.title);
+        console.log(someTodo.title);
+        if (x.title == someTodo.title) {
+            storedFormData.splice(index, 1);
+        }
+    });
+
+    localStorage.setItem(someTodo.project, JSON.stringify(storedFormData));
     
-    }
-
-
-
-
-// todos-remover
-// how it works...
-
-// user clicks delete/remove/etc and the todo itself is sent to todos-remover
-// we search and confirm which project it is part of and which number
-// get the todo, find the project it is in, then delete the project entry
-// if an entry in the middle of the series gets removed, bump the others?
+}

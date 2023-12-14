@@ -1,7 +1,8 @@
 export default function projectsStorer(someProject) {
-    const storedFormData = JSON.parse(localStorage.getItem(someProject.title)) || [];
-
-    storedFormData.push(someProject);
-
-    localStorage.setItem(someProject.title, JSON.stringify(storedFormData));
+    if (JSON.parse(localStorage.getItem(someProject.title))){
+        throw console.error("Project already exists!");
+    } else {
+        localStorage.setItem(someProject.title, []);
     }
+    
+}
