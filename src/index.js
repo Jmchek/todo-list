@@ -9,6 +9,8 @@ import projectsStorer from "./projects-storer.js";
 import todosRemover from "./todos-remover.js";
 import projectsRemover from "./projects-remover.js";
 
+import formMaker from "./form-module.js";
+
 //testing here
 let user = new Todos("Barney", "foo", "bar", "foo", "bar", "foo");
 let user2 = new Todos("Gumpy", "foo", "bar", "foo", "bar", "foo");
@@ -78,4 +80,4 @@ document.getElementById('formTemplate').addEventListener('submit', function(even
     //   }
 });
 
-projectsStorer(someProject);
+formMaker();
