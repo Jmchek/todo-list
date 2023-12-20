@@ -83,25 +83,18 @@
 // </form>
 
 export default function formMaker() {
+    const bodyGrbbr = document.querySelector('body');
+
+    bodyGrbbr.appendChild(document.createElement('form')).setAttribute('id', 'formTemplate');
+
     const formAnchorGrbbr = document.getElementById('formTemplate');
-    const labelCrtr = document.createElement('label');
-    const inputCrtr = document.createElement('input');
 
+    formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'title');
+    formAnchorGrbbr.appendChild(document.createElement('input')).setAttribute('id', 'title');
+    document.getElementById('title').setAttribute('type', 'text');
+    document.querySelector('[for="title"]').innerText = "Title: ";
 
-    formAnchorGrbbr.appendChild(labelCrtr).setAttribute('for', 'title');
-    formAnchorGrbbr.appendChild(inputCrtr).setAttribute('id', 'title2');
-    document.getElementById('title2').setAttribute('type', 'text');
-
-    // function setAttributes(element, attributes) {
-    //     Object.keys(attributes).forEach(attr => {
-    //       element.setAttribute(attr, attributes[attr]);
-    //     });
-    //   }
-
-    //   const attributes = {
-    //     name: 'example',
-    //     title: 'Box 1',
-    //     disabled: '',
-    //     style: 'background-color: salmon; color: white;',
-    //   };
+    formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'description');
+    formAnchorGrbbr.appendChild(document.createElement('textarea')).setAttribute('id', 'description');
+    document.querySelector('[for="description"]').innerText = "Description: ";
 }

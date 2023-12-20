@@ -22,10 +22,10 @@ user.notes = "hothead";
 someProject.todos = [user, user2, user3];
 
 
-let testClassGrbbr = document.querySelector(".testClass");
-testClassGrbbr.addEventListener("click", x => {
-    // projectsManager(someProject);
-});
+// let testClassGrbbr = document.querySelector(".testClass");
+// testClassGrbbr.addEventListener("click", x => {
+//     // projectsManager(someProject);
+// });
 
 // console.log(JSON.parse(localStorage.getItem('test'))[2]);
 // // localStorage.getItem('test')[2].todos[1] = user3;
@@ -35,49 +35,49 @@ testClassGrbbr.addEventListener("click", x => {
 
 // console.log(JSON.parse(localStorage.getItem('test'))[2]._todos);
 
-document.getElementById('formTemplate').addEventListener('submit', function(event) {
-    event.preventDefault();
+// document.getElementById('formTemplate').addEventListener('submit', function(event) {
+//     event.preventDefault();
 
-    const title = document.getElementById('title').value;
-    const description = document.getElementById('description').value;
-    const dueDate = document.getElementById('dueDate').value;
-    const priority = document.getElementById('priority').value;
-    const notes = document.getElementById('notes').value;
-    const checklist = document.getElementById('checklist');
+//     const title = document.getElementById('title').value;
+//     const description = document.getElementById('description').value;
+//     const dueDate = document.getElementById('dueDate').value;
+//     const priority = document.getElementById('priority').value;
+//     const notes = document.getElementById('notes').value;
+//     const checklist = document.getElementById('checklist');
 
-    const formData = {
-        project: 'test',
-        title: title,
-        description: description,
-        dueDate: dueDate,
-        priority: priority,
-        notes: notes,
-        checklist : checklist
-    };
+//     const formData = {
+//         project: 'test',
+//         title: title,
+//         description: description,
+//         dueDate: dueDate,
+//         priority: priority,
+//         notes: notes,
+//         checklist : checklist
+//     };
 
-    // todosStorer(formData);
-    // projectsStorer(someProject);
+//     // todosStorer(formData);
+//     // projectsStorer(someProject);
 
-// console.log(localStorage);
-// console.log(JSON.parse(localStorage.getItem('test')));
-// console.log(JSON.parse(localStorage.getItem('test')).find(x => x.title == 'test' ));
+// // console.log(localStorage);
+// // console.log(JSON.parse(localStorage.getItem('test')));
+// // console.log(JSON.parse(localStorage.getItem('test')).find(x => x.title == 'test' ));
 
-    // let test = JSON.parse(localStorage.getItem('test'));
+//     // let test = JSON.parse(localStorage.getItem('test'));
     
-    // for (let i = 0; i < test.length; i++) {
-    //     if (test[i] == 'hello pls work') {
-    //         test.splice(i, 1);
-    //     }
-    // }
+//     // for (let i = 0; i < test.length; i++) {
+//     //     if (test[i] == 'hello pls work') {
+//     //         test.splice(i, 1);
+//     //     }
+//     // }
     
-    // localStorage.setItem('test', JSON.stringify(test));
+//     // localStorage.setItem('test', JSON.stringify(test));
 
-    // for (let i in localStorage.getItem('test')) {
-    //     i++
-    //     for (let j in localStorage.getItem('test')[i].models) {
-    //       x += myObj.cars[i].models[j];
-    //     }
-    //   }
-});
+//     // for (let i in localStorage.getItem('test')) {
+//     //     i++
+//     //     for (let j in localStorage.getItem('test')[i].models) {
+//     //       x += myObj.cars[i].models[j];
+//     //     }
+//     //   }
+// });
 
 formMaker();
