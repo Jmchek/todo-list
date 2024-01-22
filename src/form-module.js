@@ -97,4 +97,18 @@ export default function formMaker() {
     formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'description');
     formAnchorGrbbr.appendChild(document.createElement('textarea')).setAttribute('id', 'description');
     document.querySelector('[for="description"]').innerText = "Description: ";
+
+    formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'dueDate');
+    formAnchorGrbbr.appendChild(document.createElement('input')).setAttribute('id', 'dueDate');
+    document.getElementById('dueDate').setAttribute('type', 'date');
+    document.querySelector('[for="dueDate"]').innerText = "Due Date: ";
+    
+    formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'priority');
+    formAnchorGrbbr.appendChild(document.createElement('input')).setAttribute('id', 'priority');
+    document.getElementById('priority').setAttribute('type', 'range');
+    document.querySelector('[for="priority"]').innerText = "Priority: ";
+
+    formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'notes');
+    formAnchorGrbbr.appendChild(document.createElement('textarea')).setAttribute('id', 'notes');
+    document.querySelector('[for="notes"]').innerText = "Notes: ";
 }
