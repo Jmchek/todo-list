@@ -10,6 +10,7 @@ import todosRemover from "./todos-remover.js";
 import projectsRemover from "./projects-remover.js";
 
 import formMaker from "./form-module.js";
+import "./todo-list.css";
 
 //testing here
 let user = new Todos("Barney", "foo", "bar", "foo", "bar", "foo");

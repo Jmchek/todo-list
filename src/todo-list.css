@@ -1,0 +1,26 @@
+p {
+    margin: 0;
+    display: grid;
+    justify-items: end;
+}
+
+form {
+    position: relative;
+    width: 500px;
+    height: 700px;
+    margin: 0 auto;
+    padding: 1em;
+    box-sizing: border-box;
+    background: #fff;
+  
+    /* we create our grid */
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1em 2em 1em 1em 2em 1em;
+  }
+
+label {
+    display: grid;
+    justify-items: end;
+}

@@ -111,4 +111,15 @@ export default function formMaker() {
     formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'notes');
     formAnchorGrbbr.appendChild(document.createElement('textarea')).setAttribute('id', 'notes');
     document.querySelector('[for="notes"]').innerText = "Notes: ";
+
+    //checklist
+    formAnchorGrbbr.appendChild(document.createElement('p')).innerText = "Checklist:";
+
+    formAnchorGrbbr.appendChild(document.createElement('fieldset')).setAttribute('id', 'checklist');
+
+    const clGrbbr = document.getElementById('checklist');
+
+    clGrbbr.appendChild(document.createElement('input')).setAttribute('id', 'cl-button');
+    document.querySelector('#cl-button').setAttribute('type', 'button');
+    document.querySelector('#cl-button').value = "Add List Item";
 }
