@@ -102,10 +102,25 @@ export default function formMaker() {
     formAnchorGrbbr.appendChild(document.createElement('input')).setAttribute('id', 'dueDate');
     document.getElementById('dueDate').setAttribute('type', 'date');
     document.querySelector('[for="dueDate"]').innerText = "Due Date: ";
-    
+
     formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'priority');
-    formAnchorGrbbr.appendChild(document.createElement('input')).setAttribute('id', 'priority');
+
+    formAnchorGrbbr.appendChild(document.createElement('div')).setAttribute('id', 'priorityContainer');
+    document.querySelector('#priorityContainer').appendChild(document.createElement('input')).setAttribute('id', 'priority');
+    document.querySelector('#priorityContainer').appendChild(document.createElement('output')).setAttribute('id', 'value');
+    
+    const value = document.querySelector("#value");
+    const input = document.querySelector("#priority");
+    value.textContent = input.value;
+    input.addEventListener("input", (event) => {
+    value.textContent = event.target.value;
+    });
+
+    
     document.getElementById('priority').setAttribute('type', 'range');
+    document.getElementById('priority').setAttribute('min', '0');
+    document.getElementById('priority').setAttribute('max', '100');
+    document.getElementById('priority').setAttribute('step', '1');
     document.querySelector('[for="priority"]').innerText = "Priority: ";
 
     formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'notes');

@@ -29,6 +29,7 @@
 27. fixing up todos-remover.js to correctly seek out a todo within a project and remove it DONE
 28. What's next? Now that we have the storers and removers working correctly, we will have to work on the form to work 100%, we are trying to figure out the checklist area in that the goal is for it to be dynamic. Ultimate goal is for the form to be in a js module to be dynamic
 29. For the checkbox addition in the forms, I am thinking of adding a button next to a text box to add one dynamically with the id/name being whatever is inputted into text box, can keep adding
+30. Made priority look better with a number near it, now working more on checkbox and then we can complete the form segment
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon

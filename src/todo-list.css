@@ -24,3 +24,14 @@ label {
     display: grid;
     justify-items: end;
 }
+
+#priorityContainer {
+    display: grid;
+    grid-template-columns: 80% 1fr;
+    grid-template-rows: 1em;
+}
+
+output {
+    display: flex;
+    justify-content: center;
+}
