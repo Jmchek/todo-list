@@ -83,133 +83,133 @@
 // </form>
 
 export default function formMaker() {
-    const bodyGrbbr = document.querySelector('body');
+  const bodyGrbbr = document.querySelector('body');
 
-    bodyGrbbr.appendChild(document.createElement('form')).setAttribute('id', 'formTemplate');
+  bodyGrbbr.appendChild(document.createElement('form')).setAttribute('id', 'formTemplate');
 
-    const formAnchorGrbbr = document.getElementById('formTemplate');
+  const formAnchorGrbbr = document.getElementById('formTemplate');
 
-    formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'title');
-    formAnchorGrbbr.appendChild(document.createElement('input')).setAttribute('id', 'title');
-    document.getElementById('title').setAttribute('type', 'text');
-    document.querySelector('[for="title"]').innerText = "Title: ";
+  formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'title');
+  formAnchorGrbbr.appendChild(document.createElement('input')).setAttribute('id', 'title');
+  document.getElementById('title').setAttribute('type', 'text');
+  document.querySelector('[for="title"]').innerText = "Title: ";
 
-    formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'description');
-    formAnchorGrbbr.appendChild(document.createElement('textarea')).setAttribute('id', 'description');
-    document.querySelector('[for="description"]').innerText = "Description: ";
+  formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'description');
+  formAnchorGrbbr.appendChild(document.createElement('textarea')).setAttribute('id', 'description');
+  document.querySelector('[for="description"]').innerText = "Description: ";
 
-    formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'dueDate');
-    formAnchorGrbbr.appendChild(document.createElement('input')).setAttribute('id', 'dueDate');
-    document.getElementById('dueDate').setAttribute('type', 'date');
-    document.querySelector('[for="dueDate"]').innerText = "Due Date: ";
+  formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'dueDate');
+  formAnchorGrbbr.appendChild(document.createElement('input')).setAttribute('id', 'dueDate');
+  document.getElementById('dueDate').setAttribute('type', 'date');
+  document.querySelector('[for="dueDate"]').innerText = "Due Date: ";
 
-    formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'priority');
+  formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'priority');
 
-    formAnchorGrbbr.appendChild(document.createElement('div')).setAttribute('id', 'priorityContainer');
-    document.querySelector('#priorityContainer').appendChild(document.createElement('input')).setAttribute('id', 'priority');
-    document.querySelector('#priorityContainer').appendChild(document.createElement('output')).setAttribute('id', 'value');
-    
-    const value = document.querySelector("#value");
-    const input = document.querySelector("#priority");
-    value.textContent = input.value;
-    input.addEventListener("input", (event) => {
-    value.textContent = event.target.value;
-    });
+  formAnchorGrbbr.appendChild(document.createElement('div')).setAttribute('id', 'priorityContainer');
+  document.querySelector('#priorityContainer').appendChild(document.createElement('input')).setAttribute('id', 'priority');
+  document.querySelector('#priorityContainer').appendChild(document.createElement('output')).setAttribute('id', 'value');
+  
+  const value = document.querySelector("#value");
+  const input = document.querySelector("#priority");
+  value.textContent = input.value;
+  input.addEventListener("input", (event) => {
+  value.textContent = event.target.value;
+  });
 
-    
-    document.getElementById('priority').setAttribute('type', 'range');
-    document.getElementById('priority').setAttribute('min', '0');
-    document.getElementById('priority').setAttribute('max', '100');
-    document.getElementById('priority').setAttribute('step', '1');
-    document.querySelector('[for="priority"]').innerText = "Priority: ";
+  
+  document.getElementById('priority').setAttribute('type', 'range');
+  document.getElementById('priority').setAttribute('min', '0');
+  document.getElementById('priority').setAttribute('max', '100');
+  document.getElementById('priority').setAttribute('step', '1');
+  document.querySelector('[for="priority"]').innerText = "Priority: ";
 
-    formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'notes');
-    formAnchorGrbbr.appendChild(document.createElement('textarea')).setAttribute('id', 'notes');
-    document.querySelector('[for="notes"]').innerText = "Notes: ";
+  formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'notes');
+  formAnchorGrbbr.appendChild(document.createElement('textarea')).setAttribute('id', 'notes');
+  document.querySelector('[for="notes"]').innerText = "Notes: ";
 
-    //checklist
-    formAnchorGrbbr.appendChild(document.createElement('p')).innerText = "Checklist:";
+  //checklist
+  formAnchorGrbbr.appendChild(document.createElement('p')).innerText = "Checklist:";
 
-    // formAnchorGrbbr.appendChild(document.createElement('fieldset')).setAttribute('id', 'checklist');
+  // formAnchorGrbbr.appendChild(document.createElement('fieldset')).setAttribute('id', 'checklist');
 
-    // const clGrbbr = document.getElementById('checklist');
+  // const clGrbbr = document.getElementById('checklist');
 
-    // clGrbbr.appendChild(document.createElement('input')).setAttribute('id', 'cl-button');
-    // document.querySelector('#cl-button').setAttribute('type', 'button');
-    // document.querySelector('#cl-button').value = "Add List Item";
-    formAnchorGrbbr.appendChild(document.createElement('div')).setAttribute('id', 'checklistInputContainer');
-    
-
-
-    document.querySelector('#checklistInputContainer').appendChild(document.createElement('input')).setAttribute('id', 'ulCLInput');
-    document.querySelector('#ulCLInput').setAttribute('type', 'text');
-    document.querySelector('#ulCLInput').setAttribute('placeholder', 'Write here...');
-
-    document.querySelector('#checklistInputContainer').appendChild(document.createElement('span')).setAttribute('id', 'newEleSpan');
-    document.querySelector('#newEleSpan').classList.add('addBtn');
-    document.querySelector('#newEleSpan').addEventListener('click', () => {
-        newElement();
-    })
-    document.querySelector('#newEleSpan').innerText = "Add";
-    //UL checklist
-    formAnchorGrbbr.appendChild(document.createElement('ul')).setAttribute('id', 'ulChecklist');
+  // clGrbbr.appendChild(document.createElement('input')).setAttribute('id', 'cl-button');
+  // document.querySelector('#cl-button').setAttribute('type', 'button');
+  // document.querySelector('#cl-button').value = "Add List Item";
+  formAnchorGrbbr.appendChild(document.createElement('div')).setAttribute('id', 'checklistInputContainer');
+  
 
 
+  document.querySelector('#checklistInputContainer').appendChild(document.createElement('input')).setAttribute('id', 'ulCLInput');
+  document.querySelector('#ulCLInput').setAttribute('type', 'text');
+  document.querySelector('#ulCLInput').setAttribute('placeholder', 'Write here...');
 
-    // Create a "close" button and append it to each list item
-    var myNodelist = document.getElementsByTagName("LI");
-    var i;
-    for (i = 0; i < myNodelist.length; i++) {
-      var span = document.createElement("SPAN");
-      var txt = document.createTextNode("\u00D7");
-      span.className = "close";
-      span.appendChild(txt);
-      myNodelist[i].appendChild(span);
+  document.querySelector('#checklistInputContainer').appendChild(document.createElement('span')).setAttribute('id', 'newEleSpan');
+  document.querySelector('#newEleSpan').classList.add('addBtn');
+  document.querySelector('#newEleSpan').addEventListener('click', () => {
+      newElement();
+  })
+  document.querySelector('#newEleSpan').innerText = "Add";
+  //UL checklist
+  formAnchorGrbbr.appendChild(document.createElement('ul')).setAttribute('id', 'ulChecklist');
+
+
+
+  // Create a "close" button and append it to each list item
+  var myNodelist = document.getElementsByTagName("LI");
+  var i;
+  for (i = 0; i < myNodelist.length; i++) {
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    myNodelist[i].appendChild(span);
+  }
+
+  // Click on a close button to hide the current list item
+  var close = document.getElementsByClassName("close");
+  var i;
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
     }
+  }
 
-    // Click on a close button to hide the current list item
-    var close = document.getElementsByClassName("close");
-    var i;
+  // Add a "checked" symbol when clicking on a list item
+  var list = document.querySelector('ul');
+  list.addEventListener('click', function(ev) {
+    if (ev.target.tagName === 'LI') {
+      ev.target.classList.toggle('checked');
+    }
+  }, false);
+
+  // Create a new list item when clicking on the "Add" button
+  function newElement() {
+    var li = document.createElement("li");
+    var inputValue = document.getElementById("ulCLInput").value;
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+    if (inputValue === '') {
+      alert("You must write something!");
+    } else {
+      document.getElementById("ulChecklist").appendChild(li);
+    }
+    document.getElementById("ulCLInput").value = "";
+
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    li.appendChild(span);
+
     for (i = 0; i < close.length; i++) {
       close[i].onclick = function() {
         var div = this.parentElement;
         div.style.display = "none";
       }
     }
-
-    // Add a "checked" symbol when clicking on a list item
-    var list = document.querySelector('ul');
-    list.addEventListener('click', function(ev) {
-      if (ev.target.tagName === 'LI') {
-        ev.target.classList.toggle('checked');
-      }
-    }, false);
-
-    // Create a new list item when clicking on the "Add" button
-    function newElement() {
-      var li = document.createElement("li");
-      var inputValue = document.getElementById("ulCLInput").value;
-      var t = document.createTextNode(inputValue);
-      li.appendChild(t);
-      if (inputValue === '') {
-        alert("You must write something!");
-      } else {
-        document.getElementById("ulChecklist").appendChild(li);
-      }
-      document.getElementById("ulCLInput").value = "";
-
-      var span = document.createElement("SPAN");
-      var txt = document.createTextNode("\u00D7");
-      span.className = "close";
-      span.appendChild(txt);
-      li.appendChild(span);
-
-      for (i = 0; i < close.length; i++) {
-        close[i].onclick = function() {
-          var div = this.parentElement;
-          div.style.display = "none";
-        }
-      }
-    }
+  }
 
 }
