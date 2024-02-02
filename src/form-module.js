@@ -85,46 +85,46 @@
 export default function formMaker() {
   const bodyGrbbr = document.querySelector('body');
 
-  bodyGrbbr.appendChild(document.createElement('form')).setAttribute('id', 'formTemplate');
+  bodyGrbbr.appendChild(document.createElement('form')).setAttribute('class', 'formTemplate');
 
-  const formAnchorGrbbr = document.getElementById('formTemplate');
+  const formAnchorGrbbr = document.querySelector('.formTemplate');
 
   formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'title');
-  formAnchorGrbbr.appendChild(document.createElement('input')).setAttribute('id', 'title');
-  document.getElementById('title').setAttribute('type', 'text');
+  formAnchorGrbbr.appendChild(document.createElement('input')).setAttribute('class', 'title');
+  document.querySelector('.title').setAttribute('type', 'text');
   document.querySelector('[for="title"]').innerText = "Title: ";
 
   formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'description');
-  formAnchorGrbbr.appendChild(document.createElement('textarea')).setAttribute('id', 'description');
+  formAnchorGrbbr.appendChild(document.createElement('textarea')).setAttribute('class', 'description');
   document.querySelector('[for="description"]').innerText = "Description: ";
 
   formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'dueDate');
-  formAnchorGrbbr.appendChild(document.createElement('input')).setAttribute('id', 'dueDate');
-  document.getElementById('dueDate').setAttribute('type', 'date');
+  formAnchorGrbbr.appendChild(document.createElement('input')).setAttribute('class', 'dueDate');
+  document.querySelector('.dueDate').setAttribute('type', 'date');
   document.querySelector('[for="dueDate"]').innerText = "Due Date: ";
 
   formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'priority');
 
-  formAnchorGrbbr.appendChild(document.createElement('div')).setAttribute('id', 'priorityContainer');
-  document.querySelector('#priorityContainer').appendChild(document.createElement('input')).setAttribute('id', 'priority');
-  document.querySelector('#priorityContainer').appendChild(document.createElement('output')).setAttribute('id', 'value');
+  formAnchorGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'priorityContainer');
+  document.querySelector('.priorityContainer').appendChild(document.createElement('input')).setAttribute('class', 'priority');
+  document.querySelector('.priorityContainer').appendChild(document.createElement('output')).setAttribute('class', 'value');
   
-  const value = document.querySelector("#value");
-  const input = document.querySelector("#priority");
+  const value = document.querySelector(".value");
+  const input = document.querySelector(".priority");
   value.textContent = input.value;
   input.addEventListener("input", (event) => {
   value.textContent = event.target.value;
   });
 
   
-  document.getElementById('priority').setAttribute('type', 'range');
-  document.getElementById('priority').setAttribute('min', '0');
-  document.getElementById('priority').setAttribute('max', '100');
-  document.getElementById('priority').setAttribute('step', '1');
+  document.querySelector('.priority').setAttribute('type', 'range');
+  document.querySelector('.priority').setAttribute('min', '0');
+  document.querySelector('.priority').setAttribute('max', '100');
+  document.querySelector('.priority').setAttribute('step', '1');
   document.querySelector('[for="priority"]').innerText = "Priority: ";
 
   formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'notes');
-  formAnchorGrbbr.appendChild(document.createElement('textarea')).setAttribute('id', 'notes');
+  formAnchorGrbbr.appendChild(document.createElement('textarea')).setAttribute('class', 'notes');
   document.querySelector('[for="notes"]').innerText = "Notes: ";
 
   //checklist
@@ -137,22 +137,22 @@ export default function formMaker() {
   // clGrbbr.appendChild(document.createElement('input')).setAttribute('id', 'cl-button');
   // document.querySelector('#cl-button').setAttribute('type', 'button');
   // document.querySelector('#cl-button').value = "Add List Item";
-  formAnchorGrbbr.appendChild(document.createElement('div')).setAttribute('id', 'checklistInputContainer');
+  formAnchorGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'checklistInputContainer');
   
 
 
-  document.querySelector('#checklistInputContainer').appendChild(document.createElement('input')).setAttribute('id', 'ulCLInput');
-  document.querySelector('#ulCLInput').setAttribute('type', 'text');
-  document.querySelector('#ulCLInput').setAttribute('placeholder', 'Write here...');
+  document.querySelector('.checklistInputContainer').appendChild(document.createElement('input')).setAttribute('class', 'ulCLInput');
+  document.querySelector('.ulCLInput').setAttribute('type', 'text');
+  document.querySelector('.ulCLInput').setAttribute('placeholder', 'Write here...');
 
-  document.querySelector('#checklistInputContainer').appendChild(document.createElement('span')).setAttribute('id', 'newEleSpan');
-  document.querySelector('#newEleSpan').classList.add('addBtn');
-  document.querySelector('#newEleSpan').addEventListener('click', () => {
+  document.querySelector('.checklistInputContainer').appendChild(document.createElement('span')).setAttribute('class', 'newEleSpan');
+  document.querySelector('.newEleSpan').classList.add('addBtn');
+  document.querySelector('.newEleSpan').addEventListener('click', () => {
       newElement();
   })
-  document.querySelector('#newEleSpan').innerText = "Add";
+  document.querySelector('.newEleSpan').innerText = "Add";
   //UL checklist
-  formAnchorGrbbr.appendChild(document.createElement('ul')).setAttribute('id', 'ulChecklist');
+  formAnchorGrbbr.appendChild(document.createElement('ul')).setAttribute('class', 'ulChecklist');
 
 
 
@@ -188,15 +188,15 @@ export default function formMaker() {
   // Create a new list item when clicking on the "Add" button
   function newElement() {
     var li = document.createElement("li");
-    var inputValue = document.getElementById("ulCLInput").value;
+    var inputValue = document.querySelector(".ulCLInput").value;
     var t = document.createTextNode(inputValue);
     li.appendChild(t);
     if (inputValue === '') {
       alert("You must write something!");
     } else {
-      document.getElementById("ulChecklist").appendChild(li);
+      document.querySelector(".ulChecklist").appendChild(li);
     }
-    document.getElementById("ulCLInput").value = "";
+    document.querySelector(".ulCLInput").value = "";
 
     var span = document.createElement("SPAN");
     var txt = document.createTextNode("\u00D7");

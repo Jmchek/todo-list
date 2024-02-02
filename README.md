@@ -31,6 +31,7 @@
 29. For the checkbox addition in the forms, I am thinking of adding a button next to a text box to add one dynamically with the id/name being whatever is inputted into text box, can keep adding
 30. Made priority look better with a number near it, now working more on checkbox and then we can complete the form segment
 31. gonna change checklist to a ul, following this w3: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_todo
+32. i have to change my ids to classes, reason why being that there will be multiple instances which can cause huge issues down the line, should be easier to transition to
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon
