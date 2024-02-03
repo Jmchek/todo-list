@@ -108,6 +108,7 @@ export default function formMaker() {
   formAnchorGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'priorityContainer');
   document.querySelector('.priorityContainer').appendChild(document.createElement('input')).setAttribute('class', 'priority');
   document.querySelector('.priorityContainer').appendChild(document.createElement('output')).setAttribute('class', 'value');
+  document.querySelector(".priority").setAttribute('value', '50');
   
   const value = document.querySelector(".value");
   const input = document.querySelector(".priority");

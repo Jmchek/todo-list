@@ -1,11 +1,13 @@
 *{
-  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 p {
   margin: 0;
   display: grid;
   justify-items: end;
+  align-items: center;
+  font-size: 1.1rem;
 }
 
 ul {
@@ -18,7 +20,7 @@ ul li {
   position: relative;
   padding: 12px 8px 12px 40px;
   background: #eee;
-  font-size: 18px;
+  font-size: 1.1rem;
   transition: 0.2s;
   list-style: none;
 
@@ -42,27 +44,22 @@ form {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1em 2em 1em 1em 2em 1em;
+  grid-template-rows: 2em 2em 2em 2em 2em 3em;
 }
 
 label {
   display: grid;
   justify-items: end;
+  align-items: center;
+  font-size: 1.1rem;
 }
 
-.priorityContainer {
-  display: grid;
-  grid-template-columns: 80% 1fr;
-  grid-template-rows: 1em;
-}
+
 
 output {
   display: flex;
   justify-content: center;
-}
-
-.ulCLInput {
-  /* max-width: 70%; */
+  align-items: center;
 }
 
 .newEleSpan {
@@ -72,7 +69,7 @@ output {
   color: #555;
   float: left;
   text-align: center;
-  font-size: 16px;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: 0.3s;
   border-radius: 0;
@@ -81,6 +78,48 @@ output {
 .checklistInputContainer {
   display: grid;
   grid-template-columns: 3fr 1fr;
+}
+
+.description {
+  font-size: 1.1rem;
+}
+
+.dueDate {
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.notes {
+  font-size: 1.1rem;
+}
+
+.priorityContainer {
+  display: grid;
+  grid-template-columns: 80% 10%;
+  grid-template-rows: 1em;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.priorityContainer > .priority {
+  padding: 0;
+}
+
+.title {
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.ulCLInput {
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.value {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 1px;
+  font-size: 0.9rem;
 }
 
 ul li:nth-child(odd) {
@@ -133,7 +172,7 @@ input {
   border-radius: 0;
   padding: 10px;
   float: left;
-  font-size: 16px;
+  font-size: 1.1rem;
 }
 
 /* Style the "Add" button */
