@@ -32,6 +32,10 @@
 30. Made priority look better with a number near it, now working more on checkbox and then we can complete the form segment
 31. gonna change checklist to a ul, following this w3: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_todo
 32. i have to change my ids to classes, reason why being that there will be multiple instances which can cause huge issues down the line, should be easier to transition to
+33. Trying to figure out how to get the submissions from the user for a list, if we take the todo and put every answer into an array, we can submit that array into storage to be called.
+34. Putting event listeners for every input, once the "submit" button is pressed, we will collect all the data in the form and store it locally
+34. creating the submit button first
+35. gonna undo the mass change to classes...let's see if we even need to do that, okay i might be just fine since this won't be a traditional form
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon

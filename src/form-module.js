@@ -83,6 +83,8 @@
 // </form>
 
 export default function formMaker() {
+  let arrForStor = [];
+  // the below anchor will be changed later 
   const bodyGrbbr = document.querySelector('body');
 
   bodyGrbbr.appendChild(document.createElement('form')).setAttribute('class', 'formTemplate');
@@ -213,4 +215,16 @@ export default function formMaker() {
     }
   }
 
+  console.log(arrForStor);
+
+  //SUBMIT BUTTON
+  formAnchorGrbbr.appendChild(document.createElement('button')).setAttribute('class', 'submitBtn');
+  const submitBtnGrbbr = document.querySelector('.submitBtn');
+  submitBtnGrbbr.innerText = "Submit";
+  submitBtnGrbbr.setAttribute('type', 'button');
+
+  submitBtnGrbbr.addEventListener('click', () => {
+    arrForStor.push(document.querySelector("body > form > input.title").value);
+    console.log(arrForStor);
+  });
 }

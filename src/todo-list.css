@@ -110,6 +110,10 @@ output {
   border-radius: 4px;
 }
 
+.ulChecklist {
+  grid-column-end: 3;
+}
+
 .ulCLInput {
   border: 1px solid black;
   border-radius: 4px;
@@ -157,7 +161,7 @@ ul li.checked::before {
   position: absolute;
   right: 0;
   top: 0;
-  padding: 12px 16px 16px 16px;
+  padding: 12px 16px 12px 16px;
 }
 
 .close:hover {
