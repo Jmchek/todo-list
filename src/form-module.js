@@ -238,5 +238,19 @@ export default function formMaker() {
     arrForStor.push(document.querySelector(".notes").value);
     arrForStor.push(checklistItemsArr);
     console.log(arrForStor);
+
+    document.querySelector(".title").value = "";
+    document.querySelector(".description").value = "";
+    document.querySelector(".dueDate").value = "";
+    document.querySelector(".priority").value = "";
+    document.querySelector(".notes").value = "";
+    document.querySelector(".value").textContent = 50;
+    document.querySelector(".ulChecklist").innerHTML = "";
+
+    checklistItemsArr.length = 0;
+
+    checklistItems.forEach(x => {
+      x.textContent = "";
+    });
   });
 }

@@ -37,6 +37,8 @@
 34. creating the submit button first
 35. gonna undo the mass change to classes...let's see if we even need to do that, okay i might be just fine since this won't be a traditional form
 36. So far we can pull all the input from the user, we are going to keep the checklist simple to complete the project. NEXT: try to take the data, clear the fields, and store the input, BUT FIRST let's make the submit button NOT look like shit
+37. Everything looks better, working on past NEXT goal
+38. Fields can be cleared, time to store
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon
