@@ -215,8 +215,6 @@ export default function formMaker() {
     }
   }
 
-  console.log(arrForStor);
-
   //SUBMIT BUTTON
   formAnchorGrbbr.appendChild(document.createElement('button')).setAttribute('class', 'submitBtn');
   const submitBtnGrbbr = document.querySelector('.submitBtn');
@@ -224,7 +222,21 @@ export default function formMaker() {
   submitBtnGrbbr.setAttribute('type', 'button');
 
   submitBtnGrbbr.addEventListener('click', () => {
-    arrForStor.push(document.querySelector("body > form > input.title").value);
+    let checklistItems = document.querySelectorAll('li');
+    let checklistItemsArr = [];
+
+    checklistItems.forEach(x => {
+      checklistItemsArr.push(x.textContent);
+    });
+
+    console.log(checklistItemsArr);
+
+    arrForStor.push(document.querySelector(".title").value);
+    arrForStor.push(document.querySelector(".description").value);
+    arrForStor.push(document.querySelector(".dueDate").value);
+    arrForStor.push(document.querySelector(".priority").value);
+    arrForStor.push(document.querySelector(".notes").value);
+    arrForStor.push(checklistItemsArr);
     console.log(arrForStor);
   });
 }
