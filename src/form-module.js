@@ -1,3 +1,5 @@
+import todosStorer from "./todos-storer.js";
+
 //we will have a dom anchor, it will be dynamic mostly
 // form-module will append to w/e dom anchor we pick the todos form
 
@@ -228,7 +230,7 @@ export default function formMaker() {
     checklistItems.forEach(x => {
       checklistItemsArr.push(x.textContent);
     });
-
+    
     console.log(checklistItemsArr);
 
     arrForStor.push(document.querySelector(".title").value);
@@ -236,7 +238,8 @@ export default function formMaker() {
     arrForStor.push(document.querySelector(".dueDate").value);
     arrForStor.push(document.querySelector(".priority").value);
     arrForStor.push(document.querySelector(".notes").value);
-    arrForStor.push(checklistItemsArr);
+    arrForStor.push( JSON.stringify(checklistItemsArr));
+
     console.log(arrForStor);
 
     document.querySelector(".title").value = "";
@@ -252,5 +255,18 @@ export default function formMaker() {
     checklistItems.forEach(x => {
       x.textContent = "";
     });
+
+    todosStorer(arrForStor);
+    console.log(localStorage);
+
+    arrForStor.length = 0;
+
+
+    //test stuff here
+    const restoredSession = JSON.parse(localStorage.getItem("undefined"));
+
+    // Now restoredSession variable contains the object that was saved
+    // in localStorage
+    console.log(restoredSession);
   });
 }

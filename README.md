@@ -39,6 +39,7 @@
 36. So far we can pull all the input from the user, we are going to keep the checklist simple to complete the project. NEXT: try to take the data, clear the fields, and store the input, BUT FIRST let's make the submit button NOT look like shit
 37. Everything looks better, working on past NEXT goal
 38. Fields can be cleared, time to store
+39. we can store the fields properly, now we'll have to work on a project-module to house the todo. Currently, the forms-module has to latch on to an anchor of some kind, the intent behind the project-module will be to provide an anchor for the form to attach to, and a display area for todos/local storage. Gonna set the git tree up for that so we can start work on it
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon

@@ -63,6 +63,8 @@ output {
 textarea {
   padding-left: 10px;
   padding-top: 10px;
+
+  min-height: 50px;
 }
 
 .newEleSpan {
