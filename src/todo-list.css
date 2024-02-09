@@ -67,6 +67,11 @@ textarea {
   min-height: 50px;
 }
 
+.disp-title {
+  margin: 0;
+  padding: 20px;
+}
+
 .newEleSpan {
   padding: 10px;
   width: 100%;
@@ -82,6 +87,12 @@ textarea {
 
 .newEleSpan:hover {
   background-color: #bbb;
+}
+
+.card-container {
+  display: grid;
+
+  background-color: #e0e0e0;
 }
 
 .checklistInputContainer {
@@ -112,6 +123,17 @@ textarea {
 
 .priorityContainer > .priority {
   padding: 0;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 1fr;
+
+  margin: 1%;
+  width: 75vw;
+  height: 75vh;
+  background-color: #b9b7b7;
 }
 
 .submitBtn {
