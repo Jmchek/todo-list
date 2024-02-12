@@ -82,3 +82,6 @@ someProject.todos = [user, user2, user3];
 // });
 
 // formMaker();
+
+// projectsStorer(someProject);
+todosStorer(someProject);

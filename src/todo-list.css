@@ -91,6 +91,9 @@ textarea {
 
 .card-container {
   display: grid;
+  padding: 10px;
+  border-radius: 4px;
+  grid-template-rows: 1fr 10%;
 
   background-color: #e0e0e0;
 }
@@ -125,10 +128,27 @@ textarea {
   padding: 0;
 }
 
+.proj-button-delete {
+  border: 1px solid black;
+}
+
+.project-card {
+  display: grid;
+  grid-template-rows: 10% 1fr 10%;
+}
+
+.project-title {
+  margin: 0;
+  justify-self: center;
+}
+
 .projects-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  padding: 10px;
+  border-radius: 4px;
 
   margin: 1%;
   width: 75vw;
@@ -157,6 +177,10 @@ textarea {
 .title {
   border: 1px solid black;
   border-radius: 2px;
+}
+
+.todo-btn-add {
+  border: 1px solid black;
 }
 
 .ulChecklist {

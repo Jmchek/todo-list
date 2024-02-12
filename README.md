@@ -28,6 +28,8 @@
 26. What's next? NEW GOAL: be able to effectively store user inputs pulled in from the form, and remove them
 27. fixing up todos-remover.js to correctly seek out a todo within a project and remove it DONE
 28. What's next? Now that we have the storers and removers working correctly, we will have to work on the form to work 100%, we are trying to figure out the checklist area in that the goal is for it to be dynamic. Ultimate goal is for the form to be in a js module to be dynamic
+
+FORM MODULE SECTION
 29. For the checkbox addition in the forms, I am thinking of adding a button next to a text box to add one dynamically with the id/name being whatever is inputted into text box, can keep adding
 30. Made priority look better with a number near it, now working more on checkbox and then we can complete the form segment
 31. gonna change checklist to a ul, following this w3: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_todo
@@ -40,6 +42,10 @@
 37. Everything looks better, working on past NEXT goal
 38. Fields can be cleared, time to store
 39. we can store the fields properly, now we'll have to work on a project-module to house the todo. Currently, the forms-module has to latch on to an anchor of some kind, the intent behind the project-module will be to provide an anchor for the form to attach to, and a display area for todos/local storage. Gonna set the git tree up for that so we can start work on it
+
+PROJECT MODULE SECTION
+40. we have drawn a rough model of our display layout, first things first, we will have to display the locally stored todos in a project div. Let us first create this and build inside out
+41. we built a rough skeleton of our display, now we are working on displaying a project in local storage
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon
