@@ -46,6 +46,16 @@ FORM MODULE SECTION
 PROJECT MODULE SECTION
 40. we have drawn a rough model of our display layout, first things first, we will have to display the locally stored todos in a project div. Let us first create this and build inside out
 41. we built a rough skeleton of our display, now we are working on displaying a project in local storage
+42. right now i'm trying to figure out how to use the storing modules, all they do is store, but there needs to be a logic to dictate which project a todo goes to...
+43. when a user enters the main page, 
+- they will see all projects laid out, this is where projects manager comes in
+- projects manager will go through local storage, find existing projects and put them in a display (if there are no projects, a default one will be made and presented)
+- put them in a display means, it will put all the projects in an object with key/value pairs being project name/todos
+- we can assign a 'card' to each project entry
+- div title will be the project title, todos will be listed in projects-display (will create a module to do this) then added to the display window div by div (grid styles controlling the flow)
+- Then adding to it will select THIS from the button, 
+- from there we will take the project title
+- find the project title in local storage and loop through the todos, add to them and re-display
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon

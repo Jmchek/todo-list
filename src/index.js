@@ -16,8 +16,8 @@ import "./todo-list.css";
 let user = new Todos("Barney", "foo", "bar", "foo", "bar", "foo");
 let user2 = new Todos("Gumpy", "foo", "bar", "foo", "bar", "foo");
 let user3 = new Todos("Kleetus", "foo", "bar", "foo", "bar", "foo");
-let user4 = new Todos("test", "test", "bar", "foo", "bar", "foo");
-let someProject = new Projects("test", "foo", "bar", user);
+let user4 = new Todos("Default", "test", "bar", "foo", "bar", "foo");
+let someProject = new Projects("Default", user);
 
 user.notes = "hothead";
 someProject.todos = [user, user2, user3];
@@ -85,3 +85,5 @@ someProject.todos = [user, user2, user3];
 
 // projectsStorer(someProject);
 todosStorer(someProject);
+
+projectsManager();

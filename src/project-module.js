@@ -2,3 +2,5 @@
 
 
 //create a div grid system, we will have to adjust the html file, then manipulate dom elements with this module
+
+//this might have been made redundant SEE README.md
