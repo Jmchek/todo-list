@@ -33,4 +33,6 @@ export default function projectsManager() {
     // iterate over localstorage, if there is a key we create a header with the project title
     // iterate over the todos and add it to the div
 
+
+    // WORKING ON THIS:  turn project module into a "card"-maker, the idea being projects manager looks through localStorage, if it finds a key and a value pair, it will send the data over to project-module to create a container. Project-module will accept a key, and a value as arguments then process them
 }

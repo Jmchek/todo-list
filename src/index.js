@@ -9,6 +9,8 @@ import projectsStorer from "./projects-storer.js";
 import todosRemover from "./todos-remover.js";
 import projectsRemover from "./projects-remover.js";
 
+import projectsModule from "./project-module.js";
+
 import formMaker from "./form-module.js";
 import "./todo-list.css";
 
@@ -84,6 +86,9 @@ someProject.todos = [user, user2, user3];
 // formMaker();
 
 // projectsStorer(someProject);
-todosStorer(someProject);
+// todosStorer(someProject);
 
-projectsManager();
+// projectsManager();
+
+projectsModule("foo", "bar");
+projectsModule();

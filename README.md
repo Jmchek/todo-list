@@ -56,6 +56,7 @@ PROJECT MODULE SECTION
 - Then adding to it will select THIS from the button, 
 - from there we will take the project title
 - find the project title in local storage and loop through the todos, add to them and re-display
+44. Looks like we will have to turn project module into a "card"-maker, the idea being projects manager looks through localStorage, if it finds a key and a value pair, it will send the data over to project-module to create a container. Project-module will accept a key, and a value as arguments then process them
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon
