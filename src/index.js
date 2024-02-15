@@ -90,5 +90,6 @@ someProject.todos = [user, user2, user3];
 
 // projectsManager();
 
-projectsModule("foo", "bar");
+
 projectsModule();
+projectsModule("foo", "bar");

@@ -98,6 +98,14 @@ textarea {
   background-color: #e0e0e0;
 }
 
+.card-container-add-proj {
+  display: grid;
+  padding: 10px;
+  border-radius: 4px;
+
+  background-color: #e0e0e0;
+}
+
 .checklistInputContainer {
   display: grid;
   grid-template-columns: 3fr 1fr;
