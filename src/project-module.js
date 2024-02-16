@@ -80,59 +80,33 @@ export default function projectsModule(key, todos) {
 
         document.querySelector('.proj-button-add').setAttribute('type', 'button');
         document.querySelector('.proj-button-add').setAttribute('value', 'Add Project');
-    } else if (projContGrbbr.childElementCount != 0) {
-        
-        let cardCntr = document.querySelectorAll('.card-container');
-        let prjCard = document.querySelectorAll('.project-card');
-
-        
-
-        //have to figure out how this works when there are no children under the project container
-
+    } else {
+       
         projContGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'card-container');
 
-        let projectCounter = projContGrbbr.childElementCount;
-        console.log(projectCounter);
-        console.log(typeof(projectCounter));
-        console.log(cardCntr);
-        console.log(prjCard);
+        let cardCntr = Array.from(document.querySelectorAll('.card-container'));
 
-        cardCntr.item(projectCounter).appendChild(document.createElement('div')).setAttribute('class', 'project-card');
+        let latestCardCntr = cardCntr.slice(-1);
 
-        cardCntr[projectCounter].appendChild(document.createElement('input')).setAttribute('class', 'proj-button-delete');
+        latestCardCntr[0].appendChild(document.createElement('div')).setAttribute('class', 'project-card');
 
-        document.querySelector('.proj-button-delete').setAttribute('type', 'button');
-        document.querySelector('.proj-button-delete').setAttribute('value', 'Delete Project');
+        let prjCard = Array.from(document.querySelectorAll('.project-card'));
+        let latestPrjCard = prjCard.slice(-1);
 
-        prjCard[projectCounter].appendChild(document.createElement('h3')).setAttribute('class', 'project-title');
+        latestCardCntr[0].appendChild(document.createElement('input')).setAttribute('class', 'proj-button-delete');
 
-        document.querySelector('.project-title').innerText = key;
+        latestCardCntr[0].children[1].setAttribute('type', 'button');
+        latestCardCntr[0].children[1].setAttribute('value', 'Delete Project');
 
-        prjCard[projectCounter].appendChild(document.createElement('div')).setAttribute('class', 'projects-display');
+        latestPrjCard[0].appendChild(document.createElement('h3')).setAttribute('class', 'project-title');
 
-        prjCard[projectCounter].appendChild(document.createElement('input')).setAttribute('class', 'todo-btn-add');
+        latestPrjCard[0].children[0].innerText = key;
 
-        document.querySelector('.todo-btn-add').setAttribute('type', 'button');
-        document.querySelector('.todo-btn-add').setAttribute('value', 'Add Todo');
-    } else {
-        // projContGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'card-container');
+        latestPrjCard[0].appendChild(document.createElement('div')).setAttribute('class', 'projects-display');
 
-        // document.querySelector('.card-container').appendChild(document.createElement('div')).setAttribute('class', 'project-card');
+        latestPrjCard[0].appendChild(document.createElement('input')).setAttribute('class', 'todo-btn-add');
 
-        // document.querySelector('.card-container').appendChild(document.createElement('input')).setAttribute('class', 'proj-button-delete');
-
-        // document.querySelector('.proj-button-delete').setAttribute('type', 'button');
-        // document.querySelector('.proj-button-delete').setAttribute('value', 'Delete Project');
-
-        // document.querySelector('.project-card').appendChild(document.createElement('h3')).setAttribute('class', 'project-title');
-
-        // document.querySelector('.project-title').innerText = "Default";
-
-        // document.querySelector('.project-card').appendChild(document.createElement('div')).setAttribute('class', 'projects-display');
-
-        // document.querySelector('.project-card').appendChild(document.createElement('input')).setAttribute('class', 'todo-btn-add');
-
-        // document.querySelector('.todo-btn-add').setAttribute('type', 'button');
-        // document.querySelector('.todo-btn-add').setAttribute('value', 'Add Todo');
+        latestPrjCard[0].children[2].setAttribute('type', 'button');
+        latestPrjCard[0].children[2].setAttribute('value', 'Add Todo');
     }
 }

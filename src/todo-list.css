@@ -159,7 +159,7 @@ textarea {
   border-radius: 4px;
 
   margin: 1%;
-  width: 75vw;
+  width:  clamp(1337px, 50vw, 1337px);
   height: 75vh;
   background-color: #b9b7b7;
 }
