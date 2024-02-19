@@ -45,7 +45,7 @@
 // document.querySelector('.priorityContainer').appendChild(document.createElement('output')).setAttribute('class', 'value');
 // document.querySelector(".priority").setAttribute('value', '50');
 
-export default function projectsModule(key, todos) {
+export default function projectsModule(project, todos) {
     // this function receives a local storage key and todos, it will create an html display and append it to 
 
     const projContGrbbr = document.querySelector('.projects-container');
@@ -100,9 +100,19 @@ export default function projectsModule(key, todos) {
 
         latestPrjCard[0].appendChild(document.createElement('h3')).setAttribute('class', 'project-title');
 
-        latestPrjCard[0].children[0].innerText = key;
+        latestPrjCard[0].children[0].innerText = project;
 
         latestPrjCard[0].appendChild(document.createElement('div')).setAttribute('class', 'projects-display');
+
+        latestPrjCard[0].children[1].appendChild(document.createElement('ul')).setAttribute('class', 'projects-display-ul');
+
+        latestPrjCard[0].children[1].children[0].setAttribute('class', 'hidden');
+
+        Object.entries(todos).forEach(([key, value]) => {
+            console.log(`${key}: ${value}`);
+
+            latestPrjCard[0].children[1].children[0].appendChild(document.createElement('li')).innerText = `${JSON.stringify(key)}: ${JSON.stringify(value)}`;
+        });
 
         latestPrjCard[0].appendChild(document.createElement('input')).setAttribute('class', 'todo-btn-add');
 

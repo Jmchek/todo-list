@@ -85,11 +85,15 @@ someProject.todos = [user, user2, user3];
 
 // formMaker();
 
-// projectsStorer(someProject);
+localStorage.clear();
+
+console.log(localStorage);
+
+projectsStorer(someProject);
 // todosStorer(someProject);
 
 // projectsManager();
 
 
 // projectsModule();
-projectsModule("foo", "bar");
+projectsModule("foo", someProject.todos);
