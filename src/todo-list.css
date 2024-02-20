@@ -120,6 +120,13 @@ textarea {
   border-radius: 4px;
 }
 
+.hidden {
+  white-space: nowrap; 
+  width: 250px; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
 .notes {
   font-size: 1.1rem;
 }
@@ -189,6 +196,12 @@ textarea {
 
 .todo-btn-add {
   border: 1px solid black;
+}
+
+.todos-li {
+  display: grid;
+  grid-template-columns: 1fr 15% 15%;
+  align-items: center;
 }
 
 .ulChecklist {

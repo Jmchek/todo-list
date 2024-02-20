@@ -106,12 +106,27 @@ export default function projectsModule(project, todos) {
 
         latestPrjCard[0].children[1].appendChild(document.createElement('ul')).setAttribute('class', 'projects-display-ul');
 
-        latestPrjCard[0].children[1].children[0].setAttribute('class', 'hidden');
-
         Object.entries(todos).forEach(([key, value]) => {
-            console.log(`${key}: ${value}`);
+            console.log(`${JSON.stringify(key)}: ${JSON.stringify(value)}`);
 
-            latestPrjCard[0].children[1].children[0].appendChild(document.createElement('li')).innerText = `${JSON.stringify(key)}: ${JSON.stringify(value)}`;
+            latestPrjCard[0].children[1].children[0].appendChild(document.createElement('li')).innerText = `${JSON.stringify(value.title)}, ${JSON.stringify(value.dueDate)}`;
+
+            latestPrjCard[0].children[1].children[0].children[key].setAttribute('class', 'hidden');
+
+            latestPrjCard[0].children[1].children[0].children[key].classList.add('todos-li');
+
+            latestPrjCard[0].children[1].children[0].children[key].appendChild(document.createElement('input')).setAttribute('class', 'edit-btn-todos-li');
+
+            latestPrjCard[0].children[1].children[0].children[key].appendChild(document.createElement('input')).setAttribute('class', 'close-btn-todos-li');
+
+            latestPrjCard[0].children[1].children[0].children[key].children[0].setAttribute('type', 'button');
+
+            latestPrjCard[0].children[1].children[0].children[key].children[1].setAttribute('type', 'button');
+            
+            
+            latestPrjCard[0].children[1].children[0].children[key].addEventListener('click', x => {
+                latestPrjCard[0].children[1].children[0].children[key].classList.toggle('hidden');
+            });
         });
 
         latestPrjCard[0].appendChild(document.createElement('input')).setAttribute('class', 'todo-btn-add');
