@@ -109,7 +109,7 @@ export default function projectsModule(project, todos) {
         Object.entries(todos).forEach(([key, value]) => {
             console.log(`${JSON.stringify(key)}: ${JSON.stringify(value)}`);
 
-            latestPrjCard[0].children[1].children[0].appendChild(document.createElement('li')).innerText = `${JSON.stringify(value.title)}, ${JSON.stringify(value.dueDate)}`;
+            latestPrjCard[0].children[1].children[0].appendChild(document.createElement('li')).innerText = `${JSON.stringify(value.title).replaceAll('"', '')}, ${JSON.stringify(value.dueDate).replaceAll('"', '')}`;
 
             latestPrjCard[0].children[1].children[0].children[key].setAttribute('class', 'hidden');
 
@@ -126,6 +126,8 @@ export default function projectsModule(project, todos) {
             
             latestPrjCard[0].children[1].children[0].children[key].addEventListener('click', x => {
                 latestPrjCard[0].children[1].children[0].children[key].classList.toggle('hidden');
+
+                //WORKING HERE, adding ability for card to expand
             });
         });
 
