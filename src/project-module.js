@@ -111,8 +111,6 @@ export default function projectsModule(project, todos) {
 
             latestPrjCard[0].children[1].children[0].appendChild(document.createElement('li')).innerText = `${JSON.stringify(value.title).replaceAll('"', '')}, ${JSON.stringify(value.dueDate).replaceAll('"', '')}`;
 
-            latestPrjCard[0].children[1].children[0].children[key].setAttribute('class', 'hidden');
-
             latestPrjCard[0].children[1].children[0].children[key].classList.add('todos-li');
 
             latestPrjCard[0].children[1].children[0].children[key].appendChild(document.createElement('input')).setAttribute('class', 'edit-btn-todos-li');
@@ -125,9 +123,25 @@ export default function projectsModule(project, todos) {
             
             
             latestPrjCard[0].children[1].children[0].children[key].addEventListener('click', x => {
-                latestPrjCard[0].children[1].children[0].children[key].classList.toggle('hidden');
+                let newItem = document.createElement('div');
+                let oldItem = latestPrjCard[0].children[1].children[0].children[key];
+                newItem.setAttribute('class', 'expanded-view');
 
-                //WORKING HERE, adding ability for card to expand
+                newItem.innerText = JSON.stringify(todos[key]);
+
+                newItem.addEventListener('click', y => {
+                    if(latestPrjCard[0].children[1].children[0].children[key].classList.contains('expanded-view')) {
+                        latestPrjCard[0].children[1].children[0].replaceChild(oldItem, latestPrjCard[0].children[1].children[0].children[key]);
+                    } else {
+                        latestPrjCard[0].children[1].children[0].replaceChild(newItem, latestPrjCard[0].children[1].children[0].children[key]);
+                    }
+                });
+
+                if(latestPrjCard[0].children[1].children[0].children[key].classList.contains('expanded-view')) {
+                    latestPrjCard[0].children[1].children[0].replaceChild(oldItem, latestPrjCard[0].children[1].children[0].children[key]);
+                } else {
+                    latestPrjCard[0].children[1].children[0].replaceChild(newItem, latestPrjCard[0].children[1].children[0].children[key]);
+                }
             });
         });
 
@@ -135,5 +149,6 @@ export default function projectsModule(project, todos) {
 
         latestPrjCard[0].children[2].setAttribute('type', 'button');
         latestPrjCard[0].children[2].setAttribute('value', 'Add Todo');
+        
     }
 }
