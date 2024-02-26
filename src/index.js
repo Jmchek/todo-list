@@ -87,7 +87,7 @@ someProject.todos = [user, user2, user3];
 
 localStorage.clear();
 
-console.log(localStorage);
+// console.log(localStorage);
 
 projectsStorer(someProject);
 // todosStorer(someProject);

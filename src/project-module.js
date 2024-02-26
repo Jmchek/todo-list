@@ -107,7 +107,6 @@ export default function projectsModule(project, todos) {
         latestPrjCard[0].children[1].appendChild(document.createElement('ul')).setAttribute('class', 'projects-display-ul');
 
         Object.entries(todos).forEach(([key, value]) => {
-            console.log(`${JSON.stringify(key)}: ${JSON.stringify(value)}`);
 
             latestPrjCard[0].children[1].children[0].appendChild(document.createElement('li')).innerText = `${JSON.stringify(value.title).replaceAll('"', '')}, ${JSON.stringify(value.dueDate).replaceAll('"', '')}`;
 
@@ -121,13 +120,33 @@ export default function projectsModule(project, todos) {
 
             latestPrjCard[0].children[1].children[0].children[key].children[1].setAttribute('type', 'button');
             
-            
+            //expanded view
             latestPrjCard[0].children[1].children[0].children[key].addEventListener('click', x => {
                 let newItem = document.createElement('div');
                 let oldItem = latestPrjCard[0].children[1].children[0].children[key];
+                
                 newItem.setAttribute('class', 'expanded-view');
 
-                newItem.innerText = JSON.stringify(todos[key]);
+                // newItem.innerText = JSON.stringify(todos[key]).replaceAll('"', '');
+                Object.entries(todos[key]).forEach(([newItemKey, newItemValue]) => {
+
+                    if(newItemKey != "project" && typeof(newItemValue) == "string"){
+                        let paraChild = document.createElement('p');
+                        newItem.appendChild(paraChild);
+                        paraChild.setAttribute('class', 'expanded-view-paras');
+                        paraChild.innerText = JSON.stringify(newItemKey).replaceAll('"', '') + " " + JSON.stringify(newItemValue).replaceAll('"', '');
+                    } else if (newItemKey != "project") {
+                        let paraChild = document.createElement('p');
+                        newItem.appendChild(paraChild);
+                        paraChild.setAttribute('class', 'expanded-view-paras');
+                        paraChild.innerText = JSON.stringify(newItemKey).replaceAll('"', '');
+                    }
+                    // }else if (typeof(newItemValue) == "string" && newItemKey != newItemKey.project){
+                    //     newItem.innerText += "\n" + " " + JSON.stringify(newItemKey).replaceAll('"', '') + " " + JSON.stringify(newItemValue).replaceAll('"', '');
+                    // } else {
+                    //     newItem.innerText += " " + JSON.stringify(newItemKey).replaceAll('"', '') + "\n";
+                    // }
+                });
 
                 newItem.addEventListener('click', y => {
                     if(latestPrjCard[0].children[1].children[0].children[key].classList.contains('expanded-view')) {

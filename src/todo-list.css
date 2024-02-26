@@ -122,9 +122,11 @@ textarea {
 
 .expanded-view {
   display: grid;
-  height: 50px;
-  width: 100px;
-  background-color: red;
+  justify-items: start;
+}
+
+.expanded-view:hover {
+  cursor: pointer;
 }
 
 .hidden {
