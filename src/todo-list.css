@@ -111,6 +111,26 @@ textarea {
   grid-template-columns: 3fr 1fr;
 }
 
+.del-btn-todos-li {
+
+  display: grid;
+  
+  background-image: url('/src/del-button.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.del-btn-todos-li:hover {
+
+  display: grid;
+
+  background-image: url('/src/del-button.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #f44336;
+  cursor: pointer;
+}
+
 .description {
   font-size: 1.1rem;
 }
@@ -120,9 +140,31 @@ textarea {
   border-radius: 4px;
 }
 
+.edit-btn-todos-li {
+
+  display: grid;
+
+  background-image: url('/src/edit-button.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .expanded-view {
   display: grid;
   justify-items: start;
+  background-color: rgb(255, 255, 255);
+  width: 350px;
+  height: 350px;
+  border: 1px solid black;
+  align-content: space-evenly;
+  justify-content: space-evenly;
+
+  z-index:1;
+  position: absolute;
+}
+
+.expanded-view-paras {
+  border-bottom: 1px solid black;
 }
 
 .expanded-view:hover {
@@ -209,8 +251,9 @@ textarea {
 
 .todos-li {
   display: grid;
-  grid-template-columns: 1fr 15% 15%;
+  grid-template-columns: 1fr 20% 20%;
   align-items: center;
+  height: 50px;
 }
 
 .ulChecklist {

@@ -59,7 +59,9 @@ PROJECT MODULE SECTION
 44. Looks like we will have to turn project module into a "card"-maker, the idea being projects manager looks through localStorage, if it finds a key and a value pair, it will send the data over to project-module to create a container. Project-module will accept a key, and a value as arguments then process them
 45. now that we have the project-module correctly placing divs, let's setup the todos display within the project card
 46. MINI-SECTION: thinking of making the todo title and dueDate like the project says, but we have three things that i want to do to it. First, click on the todo to expand and see the full thing. Second, add an edit button to change todo things (maybe pre-fill a form and once submitted update the data within localStorage?). Lastly, delete a todo within the list.
-47. we have made the expanded view, now we will find a way to properly display each section of the expanded todo in the div, 
+47. we have made the expanded view, now we will find a way to properly display each section of the expanded todo in the div.
+48. the expanded view now working fine (click open see details, click close and back to less detail)
+49. we are now working on an edit button for each todo
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon

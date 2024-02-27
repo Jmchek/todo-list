@@ -1,50 +1,3 @@
-//the intent behind the project-module will be to provide an anchor for the form to attach to, and a display area for todos/local storage.
-
-
-//create a div grid system, we will have to adjust the html file, then manipulate dom elements with this module
-
-//this might have been made redundant SEE README.md
-
-// nevermind we are making this a module, see README.md
-
-{/* <div class="card-container">
-        <div class="project-card">
-            <h3 class="project-title">Default</h3>
-            <div class="projects-display"></div>
-            <input class="todo-btn-add" type="button" value="Add Todo">
-        </div>
-        <input class="proj-button-delete" type="button" value="Delete Project">
-    </div> 
-
-<div class="card-container-add-proj">
-            <input class="proj-button-add" type="button" value="Add Project">  
-        </div> -->*/}
-
-// bodyGrbbr.appendChild(document.createElement('form')).setAttribute('class', 'formTemplate');
-
-// const formAnchorGrbbr = document.querySelector('.formTemplate');
-
-// formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'title');
-// formAnchorGrbbr.appendChild(document.createElement('input')).setAttribute('class', 'title');
-// document.querySelector('.title').setAttribute('type', 'text');
-// document.querySelector('[for="title"]').innerText = "Title: ";
-
-// formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'description');
-// formAnchorGrbbr.appendChild(document.createElement('textarea')).setAttribute('class', 'description');
-// document.querySelector('[for="description"]').innerText = "Description: ";
-
-// formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'dueDate');
-// formAnchorGrbbr.appendChild(document.createElement('input')).setAttribute('class', 'dueDate');
-// document.querySelector('.dueDate').setAttribute('type', 'date');
-// document.querySelector('[for="dueDate"]').innerText = "Due Date: ";
-
-// formAnchorGrbbr.appendChild(document.createElement('label')).setAttribute('for', 'priority');
-
-// formAnchorGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'priorityContainer');
-// document.querySelector('.priorityContainer').appendChild(document.createElement('input')).setAttribute('class', 'priority');
-// document.querySelector('.priorityContainer').appendChild(document.createElement('output')).setAttribute('class', 'value');
-// document.querySelector(".priority").setAttribute('value', '50');
-
 export default function projectsModule(project, todos) {
     // this function receives a local storage key and todos, it will create an html display and append it to 
 
@@ -114,7 +67,11 @@ export default function projectsModule(project, todos) {
 
             latestPrjCard[0].children[1].children[0].children[key].appendChild(document.createElement('input')).setAttribute('class', 'edit-btn-todos-li');
 
-            latestPrjCard[0].children[1].children[0].children[key].appendChild(document.createElement('input')).setAttribute('class', 'close-btn-todos-li');
+            // latestPrjCard[0].children[1].children[0].children[key].children[0].value = "Edit";
+
+            latestPrjCard[0].children[1].children[0].children[key].appendChild(document.createElement('input')).setAttribute('class', 'del-btn-todos-li');
+
+            // latestPrjCard[0].children[1].children[0].children[key].children[1].appendChild(document.createElement('img')).src = DelButton;
 
             latestPrjCard[0].children[1].children[0].children[key].children[0].setAttribute('type', 'button');
 
@@ -127,25 +84,19 @@ export default function projectsModule(project, todos) {
                 
                 newItem.setAttribute('class', 'expanded-view');
 
-                // newItem.innerText = JSON.stringify(todos[key]).replaceAll('"', '');
                 Object.entries(todos[key]).forEach(([newItemKey, newItemValue]) => {
 
                     if(newItemKey != "project" && typeof(newItemValue) == "string"){
                         let paraChild = document.createElement('p');
                         newItem.appendChild(paraChild);
                         paraChild.setAttribute('class', 'expanded-view-paras');
-                        paraChild.innerText = JSON.stringify(newItemKey).replaceAll('"', '') + " " + JSON.stringify(newItemValue).replaceAll('"', '');
+                        paraChild.innerText = JSON.stringify(newItemKey).replaceAll('"', '').charAt(0).toUpperCase() + JSON.stringify(newItemKey).replaceAll('"', '').slice(1) + ": " + JSON.stringify(newItemValue).replaceAll('"', '');
                     } else if (newItemKey != "project") {
                         let paraChild = document.createElement('p');
                         newItem.appendChild(paraChild);
                         paraChild.setAttribute('class', 'expanded-view-paras');
-                        paraChild.innerText = JSON.stringify(newItemKey).replaceAll('"', '');
+                        paraChild.innerText = JSON.stringify(newItemKey).replaceAll('"', '').charAt(0).toUpperCase() + JSON.stringify(newItemKey).replaceAll('"', '').slice(1) + ": ";
                     }
-                    // }else if (typeof(newItemValue) == "string" && newItemKey != newItemKey.project){
-                    //     newItem.innerText += "\n" + " " + JSON.stringify(newItemKey).replaceAll('"', '') + " " + JSON.stringify(newItemValue).replaceAll('"', '');
-                    // } else {
-                    //     newItem.innerText += " " + JSON.stringify(newItemKey).replaceAll('"', '') + "\n";
-                    // }
                 });
 
                 newItem.addEventListener('click', y => {
