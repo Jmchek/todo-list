@@ -140,6 +140,24 @@ textarea {
   border-radius: 4px;
 }
 
+.edit-btn-div-form {
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+
+  height: 450px;
+  width: 250px;
+  background-color: red;
+  
+  display: grid;
+}
+
+.edit-btn-div-form-btn {
+  justify-self: end;
+  align-self: start;
+  cursor: pointer;
+}
+
 .edit-btn-todos-li {
 
   display: grid;
@@ -147,6 +165,16 @@ textarea {
   background-image: url('/src/edit-button.svg');
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.edit-btn-todos-li:hover {
+  display: grid;
+
+  background-image: url('/src/edit-button.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: rgb(221, 221, 107);
+  cursor: pointer;
 }
 
 .expanded-view {

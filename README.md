@@ -62,6 +62,7 @@ PROJECT MODULE SECTION
 47. we have made the expanded view, now we will find a way to properly display each section of the expanded todo in the div.
 48. the expanded view now working fine (click open see details, click close and back to less detail)
 49. we are now working on an edit button for each todo
+50. we will have to create a div box when edit is clicked that won't close until it's out of focus or the submit button is hit, updating the todo in either case. 
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon
