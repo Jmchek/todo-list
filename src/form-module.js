@@ -1,11 +1,11 @@
 import todosStorer from "./todos-storer.js";
 
-export default function formMaker(anchor) {
+export default function formMaker(anchor, todo) {
   let arrForStor = [];
   
   const bodyGrbbr = anchor;
 
-  if(arguments.length == 1) {
+  if(arguments.length > 1) {
     bodyGrbbr.appendChild(document.createElement('form')).setAttribute('class', 'formTemplate');
 
     const formAnchorGrbbr = document.querySelector('.formTemplate');
@@ -260,7 +260,7 @@ export default function formMaker(anchor) {
   
   
     // Create a "close" button and append it to each list item
-    var myNodelist = document.getElementsByTagName("LI");
+    var myNodelist = document.getElementsByTagName(".ulChecklist > LI");
     var i;
     for (i = 0; i < myNodelist.length; i++) {
       var span = document.createElement("SPAN");
