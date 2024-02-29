@@ -6,6 +6,8 @@ export default function formMaker(anchor, todo) {
   const bodyGrbbr = anchor;
 
   if(arguments.length > 1) {
+    console.log(todo);
+
     bodyGrbbr.appendChild(document.createElement('form')).setAttribute('class', 'formTemplate');
 
     const formAnchorGrbbr = document.querySelector('.formTemplate');
@@ -51,14 +53,6 @@ export default function formMaker(anchor, todo) {
   
     //checklist
     formAnchorGrbbr.appendChild(document.createElement('p')).innerText = "Checklist:";
-  
-    // formAnchorGrbbr.appendChild(document.createElement('fieldset')).setAttribute('id', 'checklist');
-  
-    // const clGrbbr = document.getElementById('checklist');
-  
-    // clGrbbr.appendChild(document.createElement('input')).setAttribute('id', 'cl-button');
-    // document.querySelector('#cl-button').setAttribute('type', 'button');
-    // document.querySelector('#cl-button').value = "Add List Item";
     formAnchorGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'checklistInputContainer');
     
   
@@ -79,7 +73,7 @@ export default function formMaker(anchor, todo) {
   
   
     // Create a "close" button and append it to each list item
-    var myNodelist = document.getElementsByTagName("LI");
+    var myNodelist = document.getElementsByTagName(".ulChecklist > LI");
     var i;
     for (i = 0; i < myNodelist.length; i++) {
       var span = document.createElement("SPAN");
@@ -133,6 +127,15 @@ export default function formMaker(anchor, todo) {
         }
       }
     }
+
+    //pre-fill form
+    const event = new Event("input");
+    document.querySelector(".title").value = todo.title;
+    document.querySelector(".description").value = todo.description;
+    document.querySelector(".dueDate").value = todo.dueDate;
+    document.querySelector(".priority").value = todo.priority;
+    document.querySelector(".priority").dispatchEvent(event);
+    document.querySelector(".notes").value = todo.notes;
   
     //SUBMIT BUTTON
     formAnchorGrbbr.appendChild(document.createElement('button')).setAttribute('class', 'submitBtn');

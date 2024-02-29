@@ -15,7 +15,7 @@ import formMaker from "./form-module.js";
 import "./todo-list.css";
 
 //testing here
-let user = new Todos("Barney", "foo", "bar", "foo", "bar", "foo");
+let user = new Todos("Barney", "foo", "bar", "2014-02-09", "33", "foo");
 let user2 = new Todos("Gumpy", "foo", "bar", "foo", "bar", "foo");
 let user3 = new Todos("Kleetus", "foo", "bar", "foo", "bar", "foo");
 let user4 = new Todos("Default", "test", "bar", "foo", "bar", "foo");
