@@ -79,11 +79,12 @@ export default function projectsModule(project, todos) {
 
                     document.querySelector('.edit-btn-div-form').appendChild(document.createElement('h3')).setAttribute('class', 'edit-btn-div-form-header');
                     document.querySelector('.edit-btn-div-form-header').innerText = "Edit Todo";
-                    formMaker(document.querySelector('.edit-btn-div-form'),todos[key]);
 
                     document.querySelector('.edit-btn-div-form').appendChild(document.createElement('input')).setAttribute('class', 'edit-btn-div-form-btn');
                     document.querySelector('.edit-btn-div-form-btn').setAttribute('type', 'button');
                     document.querySelector('.edit-btn-div-form-btn').value = "X";
+
+                    formMaker(document.querySelector('.edit-btn-div-form'),todos[key]);
     
                     document.querySelector('.edit-btn-div-form-btn').addEventListener('click', editEleFocus => {
                         document.querySelector('.edit-btn-div-form').remove();

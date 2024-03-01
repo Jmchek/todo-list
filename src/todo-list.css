@@ -74,7 +74,7 @@ textarea {
 
 .newEleSpan {
   padding: 10px;
-  width: 100%;
+  width: 90%;
   background: #d9d9d9;
   color: #555;
   float: left;
@@ -145,9 +145,11 @@ textarea {
   justify-self: center;
   align-self: center;
 
-  height: 450px;
-  width: 250px;
-  background-color: red;
+  height: 600px;
+  width: 500px;
+
+  grid-template-columns: 90% 10%;
+  grid-template-rows: 50px 1fr;
   
   display: grid;
 }
@@ -156,6 +158,15 @@ textarea {
   justify-self: end;
   align-self: start;
   cursor: pointer;
+  height: 100%;
+  width: 100%;
+  background-color: #f44336;
+}
+
+.edit-btn-div-form-header {
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin: 0;
 }
 
 .edit-btn-todos-li {
@@ -245,7 +256,7 @@ textarea {
   border-radius: 4px;
 
   margin: 1%;
-  width:  clamp(1337px, 50vw, 1337px);
+  width:  clamp(1650px, 50vw, 1337px);
   height: 75vh;
   background-color: #b9b7b7;
 }
@@ -282,6 +293,10 @@ textarea {
   grid-template-columns: 1fr 20% 20%;
   align-items: center;
   height: 50px;
+}
+
+.todos-li > input {
+  padding: 13px;
 }
 
 .ulChecklist {
