@@ -83,16 +83,6 @@ export default function formMaker(anchor, todo) {
       myNodelist[i].appendChild(span);
     }
   
-    // Click on a close button to hide the current list item
-    var close = document.getElementsByClassName("close");
-    var i;
-    for (i = 0; i < close.length; i++) {
-      close[i].onclick = function() {
-        var div = this.parentElement;
-        div.style.display = "none";
-      }
-    }
-  
     // Add a "checked" symbol when clicking on a list item
     var list = document.querySelector('ul');
     list.addEventListener('click', function(ev) {
@@ -136,6 +126,33 @@ export default function formMaker(anchor, todo) {
     document.querySelector(".priority").value = todo.priority;
     document.querySelector(".priority").dispatchEvent(event);
     document.querySelector(".notes").value = todo.notes;
+    
+    //working here
+    let checklistItemsPre = document.querySelector('.ulChecklist');
+  
+    todo.checklist.forEach(x => {
+      checklistItemsPre.appendChild(document.createElement('li')).innerText = x;
+      // document.querySelectorAll('.ulChecklist > li').appendChild(document.createElement('span')).setAttribute('class', 'close');
+      // document.querySelectorAll('.close').innerText = "x";
+    });
+
+    document.querySelectorAll('.ulChecklist > li').forEach( y => {
+      y.appendChild(document.createElement('span')).setAttribute('class', 'close');
+    });
+
+    document.querySelectorAll('li > span').forEach(z => {
+      z.innerText = "X";
+    });
+
+    // Click on a close button to hide the current list item
+    var close = document.getElementsByClassName("close");
+    var i;
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function() {
+        var div = this.parentElement;
+        div.style.display = "none";
+      }
+    }
   
     //SUBMIT BUTTON
     formAnchorGrbbr.appendChild(document.createElement('button')).setAttribute('class', 'submitBtn');
@@ -144,14 +161,12 @@ export default function formMaker(anchor, todo) {
     submitBtnGrbbr.setAttribute('type', 'button');
   
     submitBtnGrbbr.addEventListener('click', () => {
-      let checklistItems = document.querySelectorAll('li');
+      let checklistItems = document.querySelectorAll('.ulChecklist > li');
       let checklistItemsArr = [];
   
       checklistItems.forEach(x => {
         checklistItemsArr.push(x.textContent);
       });
-      
-      console.log(checklistItemsArr);
   
       arrForStor.push(document.querySelector(".title").value);
       arrForStor.push(document.querySelector(".description").value);
@@ -159,8 +174,6 @@ export default function formMaker(anchor, todo) {
       arrForStor.push(document.querySelector(".priority").value);
       arrForStor.push(document.querySelector(".notes").value);
       arrForStor.push( JSON.stringify(checklistItemsArr));
-  
-      console.log(arrForStor);
   
       document.querySelector(".title").value = "";
       document.querySelector(".description").value = "";
@@ -177,7 +190,6 @@ export default function formMaker(anchor, todo) {
       });
   
       todosStorer(arrForStor);
-      console.log(localStorage);
   
       arrForStor.length = 0;
   
@@ -187,7 +199,6 @@ export default function formMaker(anchor, todo) {
   
       // Now restoredSession variable contains the object that was saved
       // in localStorage
-      console.log(restoredSession);
     });
   } else {
     bodyGrbbr.appendChild(document.createElement('form')).setAttribute('class', 'formTemplate');
