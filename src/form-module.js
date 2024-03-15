@@ -84,7 +84,7 @@ export default function formMaker(anchor, todo) {
     }
   
     // Add a "checked" symbol when clicking on a list item
-    var list = document.querySelector('ul');
+    var list = document.querySelector('.ulChecklist');
     list.addEventListener('click', function(ev) {
       if (ev.target.tagName === 'LI') {
         ev.target.classList.toggle('checked');
@@ -127,7 +127,7 @@ export default function formMaker(anchor, todo) {
     document.querySelector(".priority").dispatchEvent(event);
     document.querySelector(".notes").value = todo.notes;
     
-    //working here
+    //working here, we are trying to update the data in localStorage when we add or remove a checklist item
     let checklistItemsPre = document.querySelector('.ulChecklist');
   
     todo.checklist.forEach(x => {
@@ -141,7 +141,7 @@ export default function formMaker(anchor, todo) {
     });
 
     document.querySelectorAll('li > span').forEach(z => {
-      z.innerText = "X";
+      z.innerText = "\u00D7";
     });
 
     // Click on a close button to hide the current list item
@@ -167,6 +167,8 @@ export default function formMaker(anchor, todo) {
       checklistItems.forEach(x => {
         checklistItemsArr.push(x.textContent);
       });
+
+      console.log(checklistItemsArr);
   
       arrForStor.push(document.querySelector(".title").value);
       arrForStor.push(document.querySelector(".description").value);
