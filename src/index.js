@@ -16,10 +16,10 @@ import "./todo-list.css";
 
 //testing here
 let user = new Todos("Barney", "foo", "bar", "2014-02-09", "33", "foo", ["cl", "test", "cltest"]);
-let user2 = new Todos("Gumpy", "foo", "bar", "foo", "bar", "foo", ["cl", "test", "cltest"]);
-let user3 = new Todos("Kleetus", "foo", "bar", "foo", "bar", "foo", ["cl", "test", "cltest"]);
+let user2 = new Todos("Barney", "asdfasd", "badasdr", "2043-21-02", "bar", "foo", ["cl", "test", "cltest"]);
+let user3 = new Todos("Barney", "test", "test", "1998-24-11", "btestar", "foo", ["cl", "test", "cltest"]);
 let user4 = new Todos("Newie", "foo", "bar", "2022-06-04", "43", "foo");
-let someProject = new Projects("Default", user);
+let someProject = new Projects("Barney", user);
 
 user.notes = "hothead";
 someProject.todos = [user, user2, user3];
@@ -96,4 +96,4 @@ projectsStorer(someProject);
 
 
 // projectsModule();
-projectsModule("foo", someProject.todos);
+projectsModule(someProject.title, someProject.todos);

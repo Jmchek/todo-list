@@ -74,9 +74,6 @@ export default function projectsModule(project, todos) {
                 if (!document.querySelector('.edit-btn-div-form')) {
                     projContGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'edit-btn-div-form');
 
-                    //working here
-                    console.log(todos[key]);
-
                     document.querySelector('.edit-btn-div-form').appendChild(document.createElement('h3')).setAttribute('class', 'edit-btn-div-form-header');
                     document.querySelector('.edit-btn-div-form-header').innerText = "Edit Todo";
 

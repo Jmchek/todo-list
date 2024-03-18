@@ -1,4 +1,5 @@
 import todosStorer from "./todos-storer.js";
+import Todos from "./todos-creator.js";
 
 export default function formMaker(anchor, todo) {
   let arrForStor = [];
@@ -7,7 +8,6 @@ export default function formMaker(anchor, todo) {
 
   if(arguments.length > 1) {
     //FORM FOR EDITING existing todo
-    console.log(todo);
 
     bodyGrbbr.appendChild(document.createElement('form')).setAttribute('class', 'formTemplate');
 
@@ -128,7 +128,7 @@ export default function formMaker(anchor, todo) {
     document.querySelector(".priority").dispatchEvent(event);
     document.querySelector(".notes").value = todo.notes;
     
-    //working here, we are trying to update the data in localStorage when we add or remove a checklist item
+    //we are trying to update the data in localStorage when we add or remove a checklist item
     let checklistItemsPre = document.querySelector('.ulChecklist');
   
     todo.checklist.forEach(x => {
@@ -156,6 +156,7 @@ export default function formMaker(anchor, todo) {
     }
   
     //SUBMIT BUTTON
+    let todoForStor = new Todos();
     formAnchorGrbbr.appendChild(document.createElement('button')).setAttribute('class', 'submitBtn');
     const submitBtnGrbbr = document.querySelector('.submitBtn');
     submitBtnGrbbr.innerText = "Submit";
@@ -168,34 +169,43 @@ export default function formMaker(anchor, todo) {
       checklistItems.forEach(x => {
         checklistItemsArr.push(x.textContent.slice(0, -1));
       });
+      //working here
+      todoForStor.project = todo.project;
+      todoForStor.title = document.querySelector(".title").value;
+      todoForStor.description = document.querySelector(".description").value;
+      todoForStor.dueDate = document.querySelector(".dueDate").value;
+      todoForStor.priority = document.querySelector(".priority").value;
+      todoForStor.notes = document.querySelector(".notes").value;
+      todoForStor.checklist = JSON.stringify(checklistItemsArr);
+      console.log(todoForStor);
 
-      console.log(checklistItemsArr);
+      todosStorer(todoForStor);
   
-      arrForStor.push(document.querySelector(".title").value);
-      arrForStor.push(document.querySelector(".description").value);
-      arrForStor.push(document.querySelector(".dueDate").value);
-      arrForStor.push(document.querySelector(".priority").value);
-      arrForStor.push(document.querySelector(".notes").value);
-      arrForStor.push( JSON.stringify(checklistItemsArr));
+      // arrForStor.push(document.querySelector(".title").value);
+      // arrForStor.push(document.querySelector(".description").value);
+      // arrForStor.push(document.querySelector(".dueDate").value);
+      // arrForStor.push(document.querySelector(".priority").value);
+      // arrForStor.push(document.querySelector(".notes").value);
+      // arrForStor.push( JSON.stringify(checklistItemsArr));
   
-      document.querySelector(".title").value = "";
-      document.querySelector(".description").value = "";
-      document.querySelector(".dueDate").value = "";
-      document.querySelector(".priority").value = "";
-      document.querySelector(".notes").value = "";
-      document.querySelector(".value").textContent = 50;
-      document.querySelector(".ulChecklist").innerHTML = "";
+      //CLEAR FIELDS
+      // document.querySelector(".title").value = "";
+      // document.querySelector(".description").value = "";
+      // document.querySelector(".dueDate").value = "";
+      // document.querySelector(".priority").value = "";
+      // document.querySelector(".notes").value = "";
+      // document.querySelector(".value").textContent = 50;
+      // document.querySelector(".ulChecklist").innerHTML = "";
   
-      checklistItemsArr.length = 0;
+      // checklistItemsArr.length = 0;
   
-      checklistItems.forEach(x => {
-        x.textContent = "";
-      });
+      // checklistItems.forEach(x => {
+      //   x.textContent = "";
+      // });
+
+      // arrForStor.length = 0;
   
-      todosStorer(arrForStor);
-  
-      arrForStor.length = 0;
-  
+      //todosStorer(arrForStor);
   
       //test stuff here
       const restoredSession = JSON.parse(localStorage.getItem("undefined"));
