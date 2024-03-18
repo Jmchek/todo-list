@@ -6,6 +6,7 @@ export default function formMaker(anchor, todo) {
   const bodyGrbbr = anchor;
 
   if(arguments.length > 1) {
+    //FORM FOR EDITING existing todo
     console.log(todo);
 
     bodyGrbbr.appendChild(document.createElement('form')).setAttribute('class', 'formTemplate');
@@ -165,7 +166,7 @@ export default function formMaker(anchor, todo) {
       let checklistItemsArr = [];
   
       checklistItems.forEach(x => {
-        checklistItemsArr.push(x.textContent);
+        checklistItemsArr.push(x.textContent.slice(0, -1));
       });
 
       console.log(checklistItemsArr);
@@ -203,6 +204,7 @@ export default function formMaker(anchor, todo) {
       // in localStorage
     });
   } else {
+    //BASIC FORM, no todo
     bodyGrbbr.appendChild(document.createElement('form')).setAttribute('class', 'formTemplate');
 
     const formAnchorGrbbr = document.querySelector('.formTemplate');

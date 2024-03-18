@@ -64,6 +64,7 @@ PROJECT MODULE SECTION
 49. we are now working on an edit button for each todo
 50. we will have to create a div box when edit is clicked that won't close until it's out of focus or the submit button is hit, updating the todo in either case. 
 51. we have added the edit window successfully, focusing on the functionality of the form, once it is submitted we want to update the localStorage with the data in the fields
+52. check form-module, working on updating localStorage with checklist items specifically
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon
