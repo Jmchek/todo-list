@@ -177,7 +177,7 @@ export default function formMaker(anchor, todo) {
       todoForStor.priority = document.querySelector(".priority").value;
       todoForStor.notes = document.querySelector(".notes").value;
       todoForStor.checklist = JSON.stringify(checklistItemsArr);
-      console.log(todoForStor);
+      // console.log(todoForStor);
 
       todosStorer(todoForStor);
   
