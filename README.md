@@ -65,6 +65,8 @@ PROJECT MODULE SECTION
 50. we will have to create a div box when edit is clicked that won't close until it's out of focus or the submit button is hit, updating the todo in either case. 
 51. we have added the edit window successfully, focusing on the functionality of the form, once it is submitted we want to update the localStorage with the data in the fields
 52. check form-module, working on updating localStorage with checklist items specifically
+53. we can update the data in localstorage with the edit window. Now, we will have to figure out a way to update the data in the proj card within the proj container. We can try having the card be replaced if there is already an existing proj title (as in we can update it).
+
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon

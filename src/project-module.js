@@ -36,8 +36,20 @@ export default function projectsModule(project, todos) {
         document.querySelector('.proj-button-add').setAttribute('type', 'button');
         document.querySelector('.proj-button-add').setAttribute('value', 'Add Project');
     } else {
-       
-        projContGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'card-container');
+        //CARD UPDATER
+        let projCards = document.querySelectorAll('.card-container');
+        let dupeFound = false;
+
+        projCards.forEach(card => {
+            if (card.children[0].children[0].textContent == project) {
+                dupeFound = true;
+            }
+        });
+
+        if (dupeFound){
+            console.log("Dupe found!");
+        } else {
+            projContGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'card-container');
 
         let cardCntr = Array.from(document.querySelectorAll('.card-container'));
 
@@ -143,6 +155,9 @@ export default function projectsModule(project, todos) {
 
         latestPrjCard[0].children[2].setAttribute('type', 'button');
         latestPrjCard[0].children[2].setAttribute('value', 'Add Todo');
+        }
+       
+        
         
     }
 }

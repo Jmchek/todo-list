@@ -97,3 +97,4 @@ projectsStorer(someProject);
 
 // projectsModule();
 projectsModule(someProject.title, someProject.todos);
+projectsModule(someProject.title, someProject.todos);
