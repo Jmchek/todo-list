@@ -66,7 +66,9 @@ PROJECT MODULE SECTION
 51. we have added the edit window successfully, focusing on the functionality of the form, once it is submitted we want to update the localStorage with the data in the fields
 52. check form-module, working on updating localStorage with checklist items specifically
 53. we can update the data in localstorage with the edit window. Now, we will have to figure out a way to update the data in the proj card within the proj container. We can try having the card be replaced if there is already an existing proj title (as in we can update it).
-
+54. find a way to use the new function
+55. first going to allow expanded view to show the checklist
+56. update the li currently in place for the todo in the card, and find the todo within the project in localStorage and update that as well (find by title, and if title is changed, find by old title then update)
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon

@@ -1,5 +1,6 @@
 import todosStorer from "./todos-storer.js";
 import Todos from "./todos-creator.js";
+import projectsModule from "./project-module.js";
 
 export default function formMaker(anchor, todo) {
   let arrForStor = [];
@@ -7,7 +8,7 @@ export default function formMaker(anchor, todo) {
   const bodyGrbbr = anchor;
 
   if(arguments.length > 1) {
-    //FORM FOR EDITING existing todo
+    //FORM FOR EDITING existing todo (EDIT BUTTON)
 
     bodyGrbbr.appendChild(document.createElement('form')).setAttribute('class', 'formTemplate');
 
@@ -169,7 +170,7 @@ export default function formMaker(anchor, todo) {
       checklistItems.forEach(x => {
         checklistItemsArr.push(x.textContent.slice(0, -1));
       });
-      //working here
+
       todoForStor.project = todo.project;
       todoForStor.title = document.querySelector(".title").value;
       todoForStor.description = document.querySelector(".description").value;
@@ -177,41 +178,9 @@ export default function formMaker(anchor, todo) {
       todoForStor.priority = document.querySelector(".priority").value;
       todoForStor.notes = document.querySelector(".notes").value;
       todoForStor.checklist = JSON.stringify(checklistItemsArr);
-      // console.log(todoForStor);
 
       todosStorer(todoForStor);
-  
-      // arrForStor.push(document.querySelector(".title").value);
-      // arrForStor.push(document.querySelector(".description").value);
-      // arrForStor.push(document.querySelector(".dueDate").value);
-      // arrForStor.push(document.querySelector(".priority").value);
-      // arrForStor.push(document.querySelector(".notes").value);
-      // arrForStor.push( JSON.stringify(checklistItemsArr));
-  
-      //CLEAR FIELDS
-      // document.querySelector(".title").value = "";
-      // document.querySelector(".description").value = "";
-      // document.querySelector(".dueDate").value = "";
-      // document.querySelector(".priority").value = "";
-      // document.querySelector(".notes").value = "";
-      // document.querySelector(".value").textContent = 50;
-      // document.querySelector(".ulChecklist").innerHTML = "";
-  
-      // checklistItemsArr.length = 0;
-  
-      // checklistItems.forEach(x => {
-      //   x.textContent = "";
-      // });
-
-      // arrForStor.length = 0;
-  
-      //todosStorer(arrForStor);
-  
-      //test stuff here
-      const restoredSession = JSON.parse(localStorage.getItem("undefined"));
-  
-      // Now restoredSession variable contains the object that was saved
-      // in localStorage
+      
     });
   } else {
     //BASIC FORM, no todo
@@ -260,14 +229,6 @@ export default function formMaker(anchor, todo) {
   
     //checklist
     formAnchorGrbbr.appendChild(document.createElement('p')).innerText = "Checklist:";
-  
-    // formAnchorGrbbr.appendChild(document.createElement('fieldset')).setAttribute('id', 'checklist');
-  
-    // const clGrbbr = document.getElementById('checklist');
-  
-    // clGrbbr.appendChild(document.createElement('input')).setAttribute('id', 'cl-button');
-    // document.querySelector('#cl-button').setAttribute('type', 'button');
-    // document.querySelector('#cl-button').value = "Add List Item";
     formAnchorGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'checklistInputContainer');
     
   

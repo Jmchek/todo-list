@@ -18,7 +18,7 @@ import "./todo-list.css";
 let user = new Todos("Barney", "foo", "bar", "2014-02-09", "33", "dasdf", ["cl", "test", "cltest"]);
 let user2 = new Todos("Barney", "asdfasd", "badasdr", "2043-21-02", "bar", "asdfcc", ["cl", "test", "cltest"]);
 let user3 = new Todos("Barney", "test", "asdf", "1998-24-11", "btestar", "bbbbb", ["cl", "test", "cltest"]);
-let user4 = new Todos("Newie", "foo", "bar", "2022-06-04", "43", "foo");
+let user4 = new Todos("Barney", "just added", "here", "2022-06-04", "43", "a;sldkf", ["cl", "test", "cltest"]);
 let someProject = new Projects("Barney", user);
 
 user.notes = "hothead";
@@ -87,7 +87,7 @@ someProject.todos = [user, user2, user3];
 
 localStorage.clear();
 
-// console.log(localStorage);
+// // console.log(localStorage);
 
 projectsStorer(someProject);
 // todosStorer(someProject);
@@ -97,4 +97,9 @@ projectsStorer(someProject);
 
 // projectsModule();
 projectsModule(someProject.title, someProject.todos);
-projectsModule(someProject.title, someProject.todos);
+
+// someProject.todos = [user4, user2, user3];
+
+// setTimeout(() => {
+//     projectsModule(someProject.title, someProject.todos);
+//   }, 2000);
