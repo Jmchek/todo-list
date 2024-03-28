@@ -2,7 +2,7 @@ import todosStorer from "./todos-storer.js";
 import Todos from "./todos-creator.js";
 import projectsModule from "./project-module.js";
 
-export default function formMaker(anchor, todo) {
+export default function formMaker(anchor, todo, ogTodos, keyForUpdating) {
   let arrForStor = [];
   
   const bodyGrbbr = anchor;
@@ -179,7 +179,18 @@ export default function formMaker(anchor, todo) {
       todoForStor.notes = document.querySelector(".notes").value;
       todoForStor.checklist = JSON.stringify(checklistItemsArr);
 
+      Object.keys(ogTodos[keyForUpdating]).forEach((x) => {
+        Object.keys(todoForStor).forEach((y) => {
+          if (x == y && ogTodos[keyForUpdating][x] != todoForStor[y]){
+            ogTodos[keyForUpdating][x] = todoForStor[y];
+          }
+        })
+      })
+
       todosStorer(todoForStor);
+      projectsModule(todoForStor.project, ogTodos);
+
+      //working here, remove the div when submit is pressed
       
     });
   } else {

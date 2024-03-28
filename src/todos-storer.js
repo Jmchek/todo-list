@@ -4,8 +4,6 @@ export default function todosStorer(someTodo) {
     let found = false;
     let index = 0;
 
-    console.log(storedProjData);
-
     storedProjData.forEach(todo => {
         for (let y in todo){
             if(todo[y] == todoTitle){
