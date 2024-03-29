@@ -1,23 +1,28 @@
-export default function todosStorer(someTodo) {
+export default function todosStorer(someTodo, keyForUpdating) {
     let storedProjData = JSON.parse(localStorage.getItem(someTodo.project)) || [];
     const todoTitle = someTodo.title;
     let found = false;
     let index = 0;
 
-    storedProjData.forEach(todo => {
-        for (let y in todo){
-            if(todo[y] == todoTitle){
-                found = true;
-                index = storedProjData.indexOf(todo);
-            }
-        }
-    });
-
-    if (storedProjData != [] && found){
-        storedProjData[index] = someTodo;
+    if(keyForUpdating){
+        storedProjData[keyForUpdating] = someTodo;
         localStorage.setItem(someTodo.project, JSON.stringify(storedProjData));
     } else {
-        storedProjData.push(someTodo);
-        localStorage.setItem(someTodo.project, JSON.stringify(storedProjData));
+        storedProjData.forEach(todo => {
+            for (let y in todo){
+                if(todo[y] == todoTitle){
+                    found = true;
+                    index = storedProjData.indexOf(todo);
+                }
+            }
+        });
+    
+        if (storedProjData != [] && found){
+            storedProjData[index] = someTodo;
+            localStorage.setItem(someTodo.project, JSON.stringify(storedProjData));
+        } else {
+            storedProjData.push(someTodo);
+            localStorage.setItem(someTodo.project, JSON.stringify(storedProjData));
+        }
     }
 }

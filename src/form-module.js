@@ -131,6 +131,8 @@ export default function formMaker(anchor, todo, ogTodos, keyForUpdating) {
     
     //we are trying to update the data in localStorage when we add or remove a checklist item
     let checklistItemsPre = document.querySelector('.ulChecklist');
+
+    console.log(todo.checklist);
   
     todo.checklist.forEach(x => {
       checklistItemsPre.appendChild(document.createElement('li')).innerText = x;
@@ -166,6 +168,7 @@ export default function formMaker(anchor, todo, ogTodos, keyForUpdating) {
     submitBtnGrbbr.addEventListener('click', () => {
       let checklistItems = document.querySelectorAll('.ulChecklist > li');
       let checklistItemsArr = [];
+      let editWindowGrbbr = document.querySelector('.edit-btn-div-form');
   
       checklistItems.forEach(x => {
         checklistItemsArr.push(x.textContent.slice(0, -1));
@@ -179,19 +182,22 @@ export default function formMaker(anchor, todo, ogTodos, keyForUpdating) {
       todoForStor.notes = document.querySelector(".notes").value;
       todoForStor.checklist = JSON.stringify(checklistItemsArr);
 
+      //working here, have to figure out how to update data in local storage correctly
+      // todosStorer is storing by title which is changing
       Object.keys(ogTodos[keyForUpdating]).forEach((x) => {
         Object.keys(todoForStor).forEach((y) => {
-          if (x == y && ogTodos[keyForUpdating][x] != todoForStor[y]){
+          if (x == y && ogTodos[keyForUpdating][x] != todoForStor[y] && x != 'checklist'){
             ogTodos[keyForUpdating][x] = todoForStor[y];
+          } else if (x == 'checklist') {
+            ogTodos[keyForUpdating][x] = checklistItemsArr;
           }
         })
-      })
+      });
 
-      todosStorer(todoForStor);
+      todosStorer(todoForStor, keyForUpdating);
       projectsModule(todoForStor.project, ogTodos);
 
-      //working here, remove the div when submit is pressed
-      
+      editWindowGrbbr.remove();
     });
   } else {
     //BASIC FORM, no todo
