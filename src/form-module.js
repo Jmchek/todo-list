@@ -128,11 +128,12 @@ export default function formMaker(anchor, todo, ogTodos, keyForUpdating) {
     document.querySelector(".priority").value = todo.priority;
     document.querySelector(".priority").dispatchEvent(event);
     document.querySelector(".notes").value = todo.notes;
+
+    console.log(todo.dueDate);
+    console.log(typeof(todo.dueDate));
     
     //we are trying to update the data in localStorage when we add or remove a checklist item
     let checklistItemsPre = document.querySelector('.ulChecklist');
-
-    console.log(todo.checklist);
   
     todo.checklist.forEach(x => {
       checklistItemsPre.appendChild(document.createElement('li')).innerText = x;
@@ -334,8 +335,6 @@ export default function formMaker(anchor, todo, ogTodos, keyForUpdating) {
       checklistItems.forEach(x => {
         checklistItemsArr.push(x.textContent);
       });
-      
-      console.log(checklistItemsArr);
   
       arrForStor.push(document.querySelector(".title").value);
       arrForStor.push(document.querySelector(".description").value);
@@ -343,8 +342,6 @@ export default function formMaker(anchor, todo, ogTodos, keyForUpdating) {
       arrForStor.push(document.querySelector(".priority").value);
       arrForStor.push(document.querySelector(".notes").value);
       arrForStor.push( JSON.stringify(checklistItemsArr));
-  
-      console.log(arrForStor);
   
       document.querySelector(".title").value = "";
       document.querySelector(".description").value = "";
@@ -361,17 +358,12 @@ export default function formMaker(anchor, todo, ogTodos, keyForUpdating) {
       });
   
       todosStorer(arrForStor);
-      console.log(localStorage);
   
       arrForStor.length = 0;
   
   
       //test stuff here
       const restoredSession = JSON.parse(localStorage.getItem("undefined"));
-  
-      // Now restoredSession variable contains the object that was saved
-      // in localStorage
-      console.log(restoredSession);
     });
   }
 
