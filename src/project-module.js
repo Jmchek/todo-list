@@ -187,7 +187,6 @@ export default function projectsModule(project, todos) {
                     document.querySelector('.edit-btn-div-form-btn').value = "X";
 
                     formMaker(document.querySelector('.edit-btn-div-form'), todos[key], todos, key);
-                    console.log(todos[key]);
     
                     document.querySelector('.edit-btn-div-form-btn').addEventListener('click', editEleFocus => {
                         document.querySelector('.edit-btn-div-form').remove();

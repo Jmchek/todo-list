@@ -128,9 +128,6 @@ export default function formMaker(anchor, todo, ogTodos, keyForUpdating) {
     document.querySelector(".priority").value = todo.priority;
     document.querySelector(".priority").dispatchEvent(event);
     document.querySelector(".notes").value = todo.notes;
-
-    console.log(todo.dueDate);
-    console.log(typeof(todo.dueDate));
     
     //we are trying to update the data in localStorage when we add or remove a checklist item
     let checklistItemsPre = document.querySelector('.ulChecklist');
@@ -183,13 +180,13 @@ export default function formMaker(anchor, todo, ogTodos, keyForUpdating) {
       todoForStor.notes = document.querySelector(".notes").value;
       todoForStor.checklist = JSON.stringify(checklistItemsArr);
 
-      //working here, have to figure out how to update data in local storage correctly
-      // todosStorer is storing by title which is changing
+      //working here
       Object.keys(ogTodos[keyForUpdating]).forEach((x) => {
         Object.keys(todoForStor).forEach((y) => {
           if (x == y && ogTodos[keyForUpdating][x] != todoForStor[y] && x != 'checklist'){
             ogTodos[keyForUpdating][x] = todoForStor[y];
           } else if (x == 'checklist') {
+            console.log(ogTodos[keyForUpdating][x], checklistItemsArr);
             ogTodos[keyForUpdating][x] = checklistItemsArr;
           }
         })

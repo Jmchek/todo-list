@@ -69,6 +69,8 @@ PROJECT MODULE SECTION
 54. find a way to use the new function
 55. first going to allow expanded view to show the checklist
 56. update the li currently in place for the todo in the card, and find the todo within the project in localStorage and update that as well (find by title, and if title is changed, find by old title then update)
+57. errors: checklist adds but does not remove; once submit btn is pressed, the checklist preview does not show; add todo does not work; delete project does not work
+58. fixing errors
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon
