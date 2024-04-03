@@ -115,7 +115,7 @@ export default function formMaker(anchor, todo, ogTodos, keyForUpdating) {
       for (i = 0; i < close.length; i++) {
         close[i].onclick = function() {
           var div = this.parentElement;
-          div.style.display = "none";
+          div.remove();
         }
       }
     }
@@ -152,7 +152,7 @@ export default function formMaker(anchor, todo, ogTodos, keyForUpdating) {
     for (i = 0; i < close.length; i++) {
       close[i].onclick = function() {
         var div = this.parentElement;
-        div.style.display = "none";
+        div.remove();
       }
     }
   
@@ -279,7 +279,7 @@ export default function formMaker(anchor, todo, ogTodos, keyForUpdating) {
     for (i = 0; i < close.length; i++) {
       close[i].onclick = function() {
         var div = this.parentElement;
-        div.style.display = "none";
+        div.remove();
       }
     }
   
@@ -313,7 +313,7 @@ export default function formMaker(anchor, todo, ogTodos, keyForUpdating) {
       for (i = 0; i < close.length; i++) {
         close[i].onclick = function() {
           var div = this.parentElement;
-          div.style.display = "none";
+          div.remove();
         }
       }
     }

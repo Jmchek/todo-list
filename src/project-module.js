@@ -113,11 +113,28 @@ export default function projectsModule(project, todos, updatedTodos, keyForUpdat
                                 newItem.appendChild(paraChild);
                                 paraChild.setAttribute('class', 'expanded-view-paras');
                                 paraChild.innerText = JSON.stringify(newItemKey).replaceAll('"', '').charAt(0).toUpperCase() + JSON.stringify(newItemKey).replaceAll('"', '').slice(1) + ": " + JSON.stringify(newItemValue).replaceAll('"', '');
-                            } else if (newItemKey != "project") {
+                            } else if (newItemKey != "project" && newItemKey != "checklist") {
                                 let paraChild = document.createElement('p');
                                 newItem.appendChild(paraChild);
                                 paraChild.setAttribute('class', 'expanded-view-paras');
                                 paraChild.innerText = JSON.stringify(newItemKey).replaceAll('"', '').charAt(0).toUpperCase() + JSON.stringify(newItemKey).replaceAll('"', '').slice(1) + ": ";
+                            } else if (newItemKey == "checklist") {
+                                let paraChild = document.createElement('p');
+                                newItem.appendChild(paraChild);
+                                paraChild.setAttribute('class', 'expanded-view-paras');
+                                paraChild.innerText = JSON.stringify(newItemKey).replaceAll('"', '').charAt(0).toUpperCase() + JSON.stringify(newItemKey).replaceAll('"', '').slice(1) + ": ";
+    
+                                let i = 0;
+    
+                                while (i < newItemValue.length) {
+                                    if (newItemValue.length - i != 1){
+                                        paraChild.innerText += newItemValue[i] + ", ";
+                                    } else {
+                                        paraChild.innerText += newItemValue[i];
+                                    }
+                                    
+                                    i++;
+                                }
                             }
                         });
         
