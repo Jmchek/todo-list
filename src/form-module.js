@@ -185,8 +185,7 @@ export default function formMaker(anchor, todo, ogTodos, keyForUpdating) {
         Object.keys(todoForStor).forEach((y) => {
           if (x == y && ogTodos[keyForUpdating][x] != todoForStor[y] && x != 'checklist'){
             ogTodos[keyForUpdating][x] = todoForStor[y];
-          } else if (x == 'checklist') {
-            console.log(ogTodos[keyForUpdating][x], checklistItemsArr);
+          } else if (x == 'checklist' && x == y) {
             ogTodos[keyForUpdating][x] = checklistItemsArr;
           }
         })

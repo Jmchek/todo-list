@@ -1,6 +1,6 @@
 import formMaker from "./form-module";
 
-export default function projectsModule(project, todos) {
+export default function projectsModule(project, todos, updatedTodos, keyForUpdating) {
     // this function receives a local storage key and todos, it will create an html display and append it to 
 
     const projContGrbbr = document.querySelector('.projects-container');
@@ -80,8 +80,8 @@ export default function projectsModule(project, todos) {
                         document.querySelector('.edit-btn-div-form').appendChild(document.createElement('input')).setAttribute('class', 'edit-btn-div-form-btn');
                         document.querySelector('.edit-btn-div-form-btn').setAttribute('type', 'button');
                         document.querySelector('.edit-btn-div-form-btn').value = "X";
-    
-                        formMaker(document.querySelector('.edit-btn-div-form'),todos[key]);
+                        
+                        formMaker(document.querySelector('.edit-btn-div-form'),todos[key],todos, key);
         
                         document.querySelector('.edit-btn-div-form-btn').addEventListener('click', editEleFocus => {
                             document.querySelector('.edit-btn-div-form').remove();
