@@ -280,9 +280,28 @@ export default function projectsModule(project, todos, updatedTodos, keyForUpdat
 
         latestPrjCard[0].children[2].setAttribute('type', 'button');
         latestPrjCard[0].children[2].setAttribute('value', 'Add Todo');
-        }
-       
-        
-        
+
+        latestPrjCard[0].children[2].addEventListener('click', x => {
+
+            //refactor edit btn code
+            if (!document.querySelector('.add-btn-div-form')) {
+                projContGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'add-btn-div-form');
+
+                document.querySelector('.add-btn-div-form').appendChild(document.createElement('h3')).setAttribute('class', 'add-btn-div-form-header');
+                document.querySelector('.add-btn-div-form-header').innerText = "Add a Todo";
+
+                //close button for edit window
+                document.querySelector('.add-btn-div-form').appendChild(document.createElement('input')).setAttribute('class', 'add-btn-div-form-btn');
+                document.querySelector('.add-btn-div-form-btn').setAttribute('type', 'button');
+                document.querySelector('.add-btn-div-form-btn').value = "X";
+
+                formMaker(document.querySelector('.add-btn-div-form'), "", todos, key);
+
+                document.querySelector('.add-btn-div-form-btn').addEventListener('click', editEleFocus => {
+                    document.querySelector('.add-btn-div-form').remove();
+                });
+            }
+        });
+        }       
     }
 }

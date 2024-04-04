@@ -67,6 +67,35 @@ textarea {
   min-height: 50px;
 }
 
+.add-btn-div-form {
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+
+  height: 600px;
+  width: 500px;
+
+  grid-template-columns: 90% 10%;
+  grid-template-rows: 50px 1fr;
+  
+  display: grid;
+}
+
+.add-btn-div-form-header {
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin: 0;
+}
+
+.add-btn-div-form-btn {
+  justify-self: end;
+  align-self: start;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  background-color: #f44336;
+}
+
 .disp-title {
   margin: 0;
   padding: 20px;
@@ -286,6 +315,11 @@ textarea {
 
 .todo-btn-add {
   border: 1px solid black;
+}
+
+.todo-btn-add:hover {
+  background-color:#ddd;
+  cursor: pointer;
 }
 
 .todos-li {
