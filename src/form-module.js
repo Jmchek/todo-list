@@ -7,7 +7,7 @@ export default function formMaker(anchor, todo, ogTodos, keyForUpdating) {
   
   const bodyGrbbr = anchor;
 
-  if(arguments.length > 1) {
+  if(arguments.length > 3) {
     //FORM FOR EDITING existing todo (EDIT BUTTON)
 
     bodyGrbbr.appendChild(document.createElement('form')).setAttribute('class', 'formTemplate');
@@ -180,7 +180,6 @@ export default function formMaker(anchor, todo, ogTodos, keyForUpdating) {
       todoForStor.notes = document.querySelector(".notes").value;
       todoForStor.checklist = JSON.stringify(checklistItemsArr);
 
-      //working here
       Object.keys(ogTodos[keyForUpdating]).forEach((x) => {
         Object.keys(todoForStor).forEach((y) => {
           if (x == y && ogTodos[keyForUpdating][x] != todoForStor[y] && x != 'checklist'){
@@ -319,47 +318,70 @@ export default function formMaker(anchor, todo, ogTodos, keyForUpdating) {
     }
   
     //SUBMIT BUTTON
+    let todoForStor = new Todos();
     formAnchorGrbbr.appendChild(document.createElement('button')).setAttribute('class', 'submitBtn');
     const submitBtnGrbbr = document.querySelector('.submitBtn');
     submitBtnGrbbr.innerText = "Submit";
     submitBtnGrbbr.setAttribute('type', 'button');
   
     submitBtnGrbbr.addEventListener('click', () => {
-      let checklistItems = document.querySelectorAll('li');
+      // let checklistItems = document.querySelectorAll('li');
+      // let checklistItemsArr = [];
+  
+      // checklistItems.forEach(x => {
+      //   checklistItemsArr.push(x.textContent);
+      // });
+  
+      // arrForStor.push(document.querySelector(".title").value);
+      // arrForStor.push(document.querySelector(".description").value);
+      // arrForStor.push(document.querySelector(".dueDate").value);
+      // arrForStor.push(document.querySelector(".priority").value);
+      // arrForStor.push(document.querySelector(".notes").value);
+      // arrForStor.push( JSON.stringify(checklistItemsArr));
+  
+      // document.querySelector(".title").value = "";
+      // document.querySelector(".description").value = "";
+      // document.querySelector(".dueDate").value = "";
+      // document.querySelector(".priority").value = "";
+      // document.querySelector(".notes").value = "";
+      // document.querySelector(".value").textContent = 50;
+      // document.querySelector(".ulChecklist").innerHTML = "";
+  
+      // checklistItemsArr.length = 0;
+  
+      // checklistItems.forEach(x => {
+      //   x.textContent = "";
+      // });
+  
+      // todosStorer(arrForStor);
+  
+      // arrForStor.length = 0;
+  
+  
+      // //test stuff here
+      // const restoredSession = JSON.parse(localStorage.getItem("undefined"));
+
+      let checklistItems = document.querySelectorAll('.ulChecklist > li');
       let checklistItemsArr = [];
-  
+      let addBtnWindowGrbbr = document.querySelector('.add-btn-div-form');
+      let projectName = todo;
+
       checklistItems.forEach(x => {
-        checklistItemsArr.push(x.textContent);
+        checklistItemsArr.push(x.textContent.slice(0, -1));
       });
-  
-      arrForStor.push(document.querySelector(".title").value);
-      arrForStor.push(document.querySelector(".description").value);
-      arrForStor.push(document.querySelector(".dueDate").value);
-      arrForStor.push(document.querySelector(".priority").value);
-      arrForStor.push(document.querySelector(".notes").value);
-      arrForStor.push( JSON.stringify(checklistItemsArr));
-  
-      document.querySelector(".title").value = "";
-      document.querySelector(".description").value = "";
-      document.querySelector(".dueDate").value = "";
-      document.querySelector(".priority").value = "";
-      document.querySelector(".notes").value = "";
-      document.querySelector(".value").textContent = 50;
-      document.querySelector(".ulChecklist").innerHTML = "";
-  
-      checklistItemsArr.length = 0;
-  
-      checklistItems.forEach(x => {
-        x.textContent = "";
-      });
-  
-      todosStorer(arrForStor);
-  
-      arrForStor.length = 0;
-  
-  
-      //test stuff here
-      const restoredSession = JSON.parse(localStorage.getItem("undefined"));
+
+      todoForStor.project = todo.project;
+      todoForStor.title = document.querySelector(".title").value;
+      todoForStor.description = document.querySelector(".description").value;
+      todoForStor.dueDate = document.querySelector(".dueDate").value;
+      todoForStor.priority = document.querySelector(".priority").value;
+      todoForStor.notes = document.querySelector(".notes").value;
+      todoForStor.checklist = JSON.stringify(checklistItemsArr);
+
+      todosStorer(todoForStor, undefined, projectName);
+      projectsModule(projectName, ogTodos);
+
+      addBtnWindowGrbbr.remove();
     });
   }
 

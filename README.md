@@ -72,6 +72,7 @@ PROJECT MODULE SECTION
 57. errors: checklist adds but does not remove FIXED; once submit btn is pressed, the checklist preview does not show FIXED; 
 58. fixing errors DONE; add todo does not work; delete project does not work
 59. for add todo btn, we will create a blank form when the button is pressed (similar to edit window but blank), once the blank form is submitted, it will check what project the todo is under (target project name from btn's parent container), then add a todo using the todoStorer under that project in localStorage
+60. can store addBtn todo but the todo itself is missing the project key
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon

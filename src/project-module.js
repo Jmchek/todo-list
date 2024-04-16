@@ -92,8 +92,6 @@ export default function projectsModule(project, todos, updatedTodos, keyForUpdat
     
                 latestPrjCard[0].children[1].children[0].children[key].appendChild(document.createElement('input')).setAttribute('class', 'del-btn-todos-li');
     
-                // latestPrjCard[0].children[1].children[0].children[key].children[1].appendChild(document.createElement('img')).src = DelButton;
-    
                 latestPrjCard[0].children[1].children[0].children[key].children[0].setAttribute('type', 'button');
     
                 latestPrjCard[0].children[1].children[0].children[key].children[1].setAttribute('type', 'button');
@@ -276,6 +274,7 @@ export default function projectsModule(project, todos, updatedTodos, keyForUpdat
             });
         });
 
+        //add todo btn
         latestPrjCard[0].appendChild(document.createElement('input')).setAttribute('class', 'todo-btn-add');
 
         latestPrjCard[0].children[2].setAttribute('type', 'button');
@@ -285,6 +284,10 @@ export default function projectsModule(project, todos, updatedTodos, keyForUpdat
 
             //refactor edit btn code
             if (!document.querySelector('.add-btn-div-form')) {
+                let storedProj = JSON.parse(localStorage.getItem(x.target.parentNode.children[0].innerText));
+
+                console.log(storedProj);
+
                 projContGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'add-btn-div-form');
 
                 document.querySelector('.add-btn-div-form').appendChild(document.createElement('h3')).setAttribute('class', 'add-btn-div-form-header');
@@ -295,7 +298,7 @@ export default function projectsModule(project, todos, updatedTodos, keyForUpdat
                 document.querySelector('.add-btn-div-form-btn').setAttribute('type', 'button');
                 document.querySelector('.add-btn-div-form-btn').value = "X";
 
-                formMaker(document.querySelector('.add-btn-div-form'), "", todos, key);
+                formMaker(document.querySelector('.add-btn-div-form'), x.target.parentNode.children[0].innerText, storedProj);
 
                 document.querySelector('.add-btn-div-form-btn').addEventListener('click', editEleFocus => {
                     document.querySelector('.add-btn-div-form').remove();
