@@ -70,9 +70,10 @@ PROJECT MODULE SECTION
 55. first going to allow expanded view to show the checklist
 56. update the li currently in place for the todo in the card, and find the todo within the project in localStorage and update that as well (find by title, and if title is changed, find by old title then update)
 57. errors: checklist adds but does not remove FIXED; once submit btn is pressed, the checklist preview does not show FIXED; 
-58. fixing errors DONE; add todo does not work; delete project does not work
-59. for add todo btn, we will create a blank form when the button is pressed (similar to edit window but blank), once the blank form is submitted, it will check what project the todo is under (target project name from btn's parent container), then add a todo using the todoStorer under that project in localStorage
-60. can store addBtn todo but the todo itself is missing the project key
+58. fixing errors DONE; add todo does not work FIXED; delete project does not work
+59. for add todo btn, we will create a blank form when the button is pressed (similar to edit window but blank), once the blank form is submitted, it will check what project the todo is under (target project name from btn's parent container), then add a todo using the todoStorer under that project in localStorage DONE
+60. can store addBtn todo but the todo itself is missing the project key FIXED
+61. working on delete project btn now
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon

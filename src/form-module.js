@@ -339,6 +339,9 @@ export default function formMaker(anchor, todo, ogTodos, keyForUpdating) {
       todoForStor.notes = document.querySelector(".notes").value;
       todoForStor.checklist = JSON.stringify(checklistItemsArr);
 
+      
+      ogTodos.push(todoForStor);
+      
       todosStorer(todoForStor, undefined, projectName);
       projectsModule(projectName, ogTodos);
 
