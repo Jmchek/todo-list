@@ -1,6 +1,6 @@
 import formMaker from "./form-module";
 
-export default function projectsModule(project, todos, updatedTodos, keyForUpdating) {
+export default function projectsModule(project, todos) {
     // this function receives a local storage key and todos, it will create an html display and append it to 
 
     const projContGrbbr = document.querySelector('.projects-container');
@@ -279,14 +279,11 @@ export default function projectsModule(project, todos, updatedTodos, keyForUpdat
 
         latestPrjCard[0].children[2].setAttribute('type', 'button');
         latestPrjCard[0].children[2].setAttribute('value', 'Add Todo');
-
+        //submit btn
         latestPrjCard[0].children[2].addEventListener('click', x => {
 
-            //refactor edit btn code
             if (!document.querySelector('.add-btn-div-form')) {
                 let storedProj = JSON.parse(localStorage.getItem(x.target.parentNode.children[0].innerText));
-
-                console.log(storedProj);
 
                 projContGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'add-btn-div-form');
 
