@@ -73,7 +73,7 @@ PROJECT MODULE SECTION
 58. fixing errors DONE; add todo does not work FIXED; delete project does not work
 59. for add todo btn, we will create a blank form when the button is pressed (similar to edit window but blank), once the blank form is submitted, it will check what project the todo is under (target project name from btn's parent container), then add a todo using the todoStorer under that project in localStorage DONE
 60. can store addBtn todo but the todo itself is missing the project key FIXED
-61. working on delete project btn now
+61. error: add todo btn getting shrunk on more todos being added
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon
