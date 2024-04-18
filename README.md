@@ -77,7 +77,7 @@ PROJECT MODULE SECTION
 62. MERGING, going to now work on delete todo and delete project buttons
 
 DELETE TODO SECTION
-63. 
+63. project module will send the todo info to todos-remover.js to remove the data from localStorage while deleting the todo in the actual project display card
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon

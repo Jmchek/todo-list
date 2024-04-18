@@ -1,4 +1,5 @@
 import formMaker from "./form-module";
+import todosRemover from "./todos-remover";
 
 export default function projectsModule(project, todos) {
     // this function receives a local storage key and todos, it will create an html display and append it to 
@@ -93,8 +94,24 @@ export default function projectsModule(project, todos) {
                 latestPrjCard[0].children[1].children[0].children[key].appendChild(document.createElement('input')).setAttribute('class', 'del-btn-todos-li');
     
                 latestPrjCard[0].children[1].children[0].children[key].children[0].setAttribute('type', 'button');
-    
+
+                latestPrjCard[0].children[1].children[0].children[key].appendChild(document.createElement('input')).setAttribute('class', 'del-btn-todos-li');
+
                 latestPrjCard[0].children[1].children[0].children[key].children[1].setAttribute('type', 'button');
+
+                //delete todo btn
+                latestPrjCard[0].children[1].children[0].children[key].children[1].addEventListener('click', x => {
+                    let todosProjectName = x.target.parentNode.parentNode.parentNode.previousElementSibling.innerText;
+
+                    function getDomIndex (target) {
+                        return [].slice.call(target.parentNode.children).indexOf(target)
+                    }
+
+                    if(confirm("Are you sure?")){
+                        todosRemover(todosProjectName, getDomIndex(x.target.parentNode));
+                        x.target.parentNode.remove();
+                    }
+                });
                 
                 //expanded view
                 latestPrjCard[0].children[1].children[0].children[key].addEventListener('click', x => {
@@ -210,11 +227,25 @@ export default function projectsModule(project, todos) {
                 
             });
 
-            latestPrjCard[0].children[1].children[0].children[key].appendChild(document.createElement('input')).setAttribute('class', 'del-btn-todos-li');
-
             latestPrjCard[0].children[1].children[0].children[key].children[0].setAttribute('type', 'button');
 
+            latestPrjCard[0].children[1].children[0].children[key].appendChild(document.createElement('input')).setAttribute('class', 'del-btn-todos-li');
+
             latestPrjCard[0].children[1].children[0].children[key].children[1].setAttribute('type', 'button');
+
+            //delete todo btn
+            latestPrjCard[0].children[1].children[0].children[key].children[1].addEventListener('click', x => {
+                let todosProjectName = x.target.parentNode.parentNode.parentNode.previousElementSibling.innerText;
+
+                function getDomIndex (target) {
+                    return [].slice.call(target.parentNode.children).indexOf(target)
+                }
+
+                if(confirm("Are you sure?")){
+                    todosRemover(todosProjectName, getDomIndex(x.target.parentNode));
+                    x.target.parentNode.remove();
+                }
+            });
             
             //expanded view
             latestPrjCard[0].children[1].children[0].children[key].addEventListener('click', x => {
@@ -279,7 +310,7 @@ export default function projectsModule(project, todos) {
 
         latestPrjCard[0].children[2].setAttribute('type', 'button');
         latestPrjCard[0].children[2].setAttribute('value', 'Add Todo');
-        //submit btn
+        //submit btn for add todo btn
         latestPrjCard[0].children[2].addEventListener('click', x => {
 
             if (!document.querySelector('.add-btn-div-form')) {

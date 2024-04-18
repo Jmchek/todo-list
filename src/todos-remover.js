@@ -1,15 +1,9 @@
-export default function todosRemover(someTodo) {
+export default function todosRemover(someProject, indexForDel) {
 
-    const storedFormData = JSON.parse(localStorage.getItem(someTodo.project)) || [];
+    const storedFormData = JSON.parse(localStorage.getItem(someProject)) || [];
 
-    storedFormData.forEach((x, index) => {
-        console.log(x.title);
-        console.log(someTodo.title);
-        if (x.title == someTodo.title) {
-            storedFormData.splice(index, 1);
-        }
-    });
+    storedFormData.splice(indexForDel, 1);
 
-    localStorage.setItem(someTodo.project, JSON.stringify(storedFormData));
+    localStorage.setItem(someProject, JSON.stringify(storedFormData));
     
 }
