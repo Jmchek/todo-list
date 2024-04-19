@@ -79,6 +79,9 @@ PROJECT MODULE SECTION
 DELETE TODO SECTION
 63. project module will send the todo info to todos-remover.js to remove the data from localStorage while deleting the todo in the actual project display card
 
+DELETE PROJECT SECTION
+64. 
+
 UX/UI stuff
 1. user opens page to a blank project with a plus icon
 2. pluc icon clicked, todo object is added in the project and EXPANDED to add details 
