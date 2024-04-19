@@ -1,5 +1,6 @@
 import formMaker from "./form-module";
 import todosRemover from "./todos-remover";
+import projectsRemover from "./projects-remover";
 
 export default function projectsModule(project, todos) {
     // this function receives a local storage key and todos, it will create an html display and append it to 
@@ -12,10 +13,24 @@ export default function projectsModule(project, todos) {
 
         document.querySelector('.card-container').appendChild(document.createElement('div')).setAttribute('class', 'project-card');
 
+        //del proj btn
         document.querySelector('.card-container').appendChild(document.createElement('input')).setAttribute('class', 'proj-button-delete');
 
         document.querySelector('.proj-button-delete').setAttribute('type', 'button');
         document.querySelector('.proj-button-delete').setAttribute('value', 'Delete Project');
+
+        latestCardCntr[0].children[1].addEventListener('click', x => {
+
+            let projName = x.target.parentNode.children[0].children[0].innerText;
+
+            if(confirm("Are you sure?")){
+                if(confirm("Super sure?")){
+                    projectsRemover(projName);
+                    x.target.parentNode.remove();
+                    alert("Project " + projName + " has been deleted.");
+                }
+            }
+        });
 
         document.querySelector('.project-card').appendChild(document.createElement('h3')).setAttribute('class', 'project-title');
 
@@ -184,10 +199,24 @@ export default function projectsModule(project, todos) {
         let prjCard = Array.from(document.querySelectorAll('.project-card'));
         let latestPrjCard = prjCard.slice(-1);
 
+        //del proj btn
         latestCardCntr[0].appendChild(document.createElement('input')).setAttribute('class', 'proj-button-delete');
 
         latestCardCntr[0].children[1].setAttribute('type', 'button');
         latestCardCntr[0].children[1].setAttribute('value', 'Delete Project');
+        
+        latestCardCntr[0].children[1].addEventListener('click', x => {
+
+            let projName = x.target.parentNode.children[0].children[0].innerText;
+
+            if(confirm("Are you sure?")){
+                if(confirm("Super sure?")){
+                    projectsRemover(projName);
+                    x.target.parentNode.remove();
+                    alert("Project " + projName + " has been deleted.");
+                }
+            }
+        });
 
         latestPrjCard[0].appendChild(document.createElement('h3')).setAttribute('class', 'project-title');
 
