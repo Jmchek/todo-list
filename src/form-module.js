@@ -129,20 +129,23 @@ export default function formMaker(anchor, todo, ogTodos, keyForUpdating) {
     document.querySelector(".priority").dispatchEvent(event);
     document.querySelector(".notes").value = todo.notes;
     
-    //we are trying to update the data in localStorage when we add or remove a checklist item
-    let checklistItemsPre = document.querySelector('.ulChecklist');
+    if(typeof(todo.checklist) != "string") {
+      let checklistItemsPre = document.querySelector('.ulChecklist') || [];
+
+      todo.checklist.forEach(x => {
+        checklistItemsPre.appendChild(document.createElement('li')).innerText = x;
+      });
   
-    todo.checklist.forEach(x => {
-      checklistItemsPre.appendChild(document.createElement('li')).innerText = x;
-    });
-
-    document.querySelectorAll('.ulChecklist > li').forEach( y => {
-      y.appendChild(document.createElement('span')).setAttribute('class', 'close');
-    });
-
-    document.querySelectorAll('li > span').forEach(z => {
-      z.innerText = "\u00D7";
-    });
+  
+      document.querySelectorAll('.ulChecklist > li').forEach( y => {
+        y.appendChild(document.createElement('span')).setAttribute('class', 'close');
+      });
+  
+      document.querySelectorAll('li > span').forEach(z => {
+        z.innerText = "\u00D7";
+      });
+    }
+    
 
     // Click on a close button to hide the current list item
     var close = document.getElementsByClassName("close");

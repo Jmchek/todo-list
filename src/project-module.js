@@ -3,13 +3,15 @@ import todosRemover from "./todos-remover";
 import projectsRemover from "./projects-remover";
 
 export default function projectsModule(project, todos) {
-    // this function receives a local storage key and todos, it will create an html display and append it to 
 
     const projContGrbbr = document.querySelector('.projects-container');
 
     //default project
     if (arguments.length == 0) {
         projContGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'card-container');
+
+        let cardCntr = Array.from(document.querySelectorAll('.card-container'));
+        let latestCardCntr = cardCntr.slice(-1);
 
         document.querySelector('.card-container').appendChild(document.createElement('div')).setAttribute('class', 'project-card');
 
@@ -42,6 +44,33 @@ export default function projectsModule(project, todos) {
 
         document.querySelector('.todo-btn-add').setAttribute('type', 'button');
         document.querySelector('.todo-btn-add').setAttribute('value', 'Add Todo');
+
+        let prjCard = Array.from(document.querySelectorAll('.project-card'));
+        let latestPrjCard = prjCard.slice(-1);
+
+        //add todo btn
+        latestPrjCard[0].children[2].addEventListener('click', x => {
+
+            if (!document.querySelector('.add-btn-div-form')) {
+                let storedProj = JSON.parse(localStorage.getItem(x.target.parentNode.children[0].innerText)) || [];
+
+                projContGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'add-btn-div-form');
+
+                document.querySelector('.add-btn-div-form').appendChild(document.createElement('h3')).setAttribute('class', 'add-btn-div-form-header');
+                document.querySelector('.add-btn-div-form-header').innerText = "Add a Todo";
+
+                //close button for edit window
+                document.querySelector('.add-btn-div-form').appendChild(document.createElement('input')).setAttribute('class', 'add-btn-div-form-btn');
+                document.querySelector('.add-btn-div-form-btn').setAttribute('type', 'button');
+                document.querySelector('.add-btn-div-form-btn').value = "X";
+
+                formMaker(document.querySelector('.add-btn-div-form'), x.target.parentNode.children[0].innerText, storedProj);
+
+                document.querySelector('.add-btn-div-form-btn').addEventListener('click', editEleFocus => {
+                    document.querySelector('.add-btn-div-form').remove();
+                });
+            }
+        });
 
 
         //add a project card
@@ -109,8 +138,6 @@ export default function projectsModule(project, todos) {
                 latestPrjCard[0].children[1].children[0].children[key].appendChild(document.createElement('input')).setAttribute('class', 'del-btn-todos-li');
     
                 latestPrjCard[0].children[1].children[0].children[key].children[0].setAttribute('type', 'button');
-
-                latestPrjCard[0].children[1].children[0].children[key].appendChild(document.createElement('input')).setAttribute('class', 'del-btn-todos-li');
 
                 latestPrjCard[0].children[1].children[0].children[key].children[1].setAttribute('type', 'button');
 
@@ -350,7 +377,7 @@ export default function projectsModule(project, todos) {
                 document.querySelector('.add-btn-div-form').appendChild(document.createElement('h3')).setAttribute('class', 'add-btn-div-form-header');
                 document.querySelector('.add-btn-div-form-header').innerText = "Add a Todo";
 
-                //close button for edit window
+                //close button for add window
                 document.querySelector('.add-btn-div-form').appendChild(document.createElement('input')).setAttribute('class', 'add-btn-div-form-btn');
                 document.querySelector('.add-btn-div-form-btn').setAttribute('type', 'button');
                 document.querySelector('.add-btn-div-form-btn').value = "X";

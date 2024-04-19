@@ -8,7 +8,7 @@ export default function todosStorer(someTodo, keyForUpdating, projName) {
         storedProjData[keyForUpdating] = someTodo;
         localStorage.setItem(someTodo.project, JSON.stringify(storedProjData));
     } else if (projName){
-        storedProjData = JSON.parse(localStorage.getItem(projName));
+        storedProjData = JSON.parse(localStorage.getItem(projName)) || [];
         storedProjData.push(someTodo);
         localStorage.setItem(projName, JSON.stringify(storedProjData));
     } else {
