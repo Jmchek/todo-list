@@ -264,6 +264,11 @@ textarea {
   padding: 0;
 }
 
+.proj-button-add:hover {
+  background-color:#99df7e;
+  cursor: pointer;
+}
+
 .proj-button-delete {
   border: 1px solid black;
 }

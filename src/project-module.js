@@ -80,6 +80,10 @@ export default function projectsModule(project, todos) {
 
         document.querySelector('.proj-button-add').setAttribute('type', 'button');
         document.querySelector('.proj-button-add').setAttribute('value', 'Add Project');
+
+        document.querySelector('.proj-button-add').addEventListener('click', x => {
+            console.log('hello there');
+        });
     } else {
         //CARD UPDATER
         let projCards = document.querySelectorAll('.card-container');
