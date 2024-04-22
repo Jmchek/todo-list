@@ -73,7 +73,7 @@ export default function projectsModule(project, todos) {
         });
 
 
-        //add a project card
+        //add project button
         projContGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'card-container-add-proj');
 
         document.querySelector('.card-container-add-proj').appendChild(document.createElement('input')).setAttribute('class', 'proj-button-add');
@@ -82,7 +82,29 @@ export default function projectsModule(project, todos) {
         document.querySelector('.proj-button-add').setAttribute('value', 'Add Project');
 
         document.querySelector('.proj-button-add').addEventListener('click', x => {
-            console.log('hello there');
+
+            //working here
+
+            if (!document.querySelector('.add-proj-btn-div-form')) {
+                let storedProj = JSON.parse(localStorage.getItem(x.target.parentNode.children[0].innerText));
+
+                projContGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'add-proj-btn-div-form');
+
+                document.querySelector('.add-proj-btn-div-form').appendChild(document.createElement('h3')).setAttribute('class', 'add-btn-div-form-header');
+                document.querySelector('.add-proj-btn-div-form-header').innerText = "Add a Todo";
+
+                //close button for add window
+                document.querySelector('.add-proj-btn-div-form').appendChild(document.createElement('input')).setAttribute('class', 'add-btn-div-form-btn');
+                document.querySelector('.add-proj-btn-div-form-btn').setAttribute('type', 'button');
+                document.querySelector('.add-proj-btn-div-form-btn').value = "X";
+
+                formMaker(document.querySelector('.add-proj-btn-div-form'), x.target.parentNode.children[0].innerText, storedProj);
+
+                document.querySelector('.add-proj-btn-div-form-btn').addEventListener('click', editEleFocus => {
+                    document.querySelector('.add-proj-btn-div-form').remove();
+                });
+            }
+            
         });
     } else {
         //CARD UPDATER
