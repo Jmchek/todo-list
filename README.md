@@ -83,7 +83,7 @@ DELETE PROJECT SECTION
 64. DONE
 
 ADD PROJECT SECTION
-65. 
+65. we will have to delete the old add project button (or move it somewhere) when adding newer projects
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon

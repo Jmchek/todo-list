@@ -1,3 +1,4 @@
+import projectsModule from "./project-module";
 import projectsStorer from "./projects-storer";
 
 export default function projFormMaker(anchor) {
@@ -23,6 +24,8 @@ export default function projFormMaker(anchor) {
       let addBtnWindowGrbbr = document.querySelector('.add-proj-btn-div-form');
     
       projectsStorer(document.querySelector(".title").value);
+
+      projectsModule(document.querySelector(".title").value);
 
       addBtnWindowGrbbr.remove();
     });
