@@ -1,6 +1,7 @@
 import formMaker from "./form-module";
 import todosRemover from "./todos-remover";
 import projectsRemover from "./projects-remover";
+import projFormMaker from "./project-form";
 
 export default function projectsModule(project, todos) {
 
@@ -86,21 +87,19 @@ export default function projectsModule(project, todos) {
             //working here
 
             if (!document.querySelector('.add-proj-btn-div-form')) {
-                let storedProj = JSON.parse(localStorage.getItem(x.target.parentNode.children[0].innerText));
-
                 projContGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'add-proj-btn-div-form');
 
                 document.querySelector('.add-proj-btn-div-form').appendChild(document.createElement('h3')).setAttribute('class', 'add-btn-div-form-header');
-                document.querySelector('.add-proj-btn-div-form-header').innerText = "Add a Todo";
+                document.querySelector('.add-btn-div-form-header').innerText = "Add a Project";
 
                 //close button for add window
                 document.querySelector('.add-proj-btn-div-form').appendChild(document.createElement('input')).setAttribute('class', 'add-btn-div-form-btn');
-                document.querySelector('.add-proj-btn-div-form-btn').setAttribute('type', 'button');
-                document.querySelector('.add-proj-btn-div-form-btn').value = "X";
+                document.querySelector('.add-btn-div-form-btn').setAttribute('type', 'button');
+                document.querySelector('.add-btn-div-form-btn').value = "X";
 
-                formMaker(document.querySelector('.add-proj-btn-div-form'), x.target.parentNode.children[0].innerText, storedProj);
+                projFormMaker(document.querySelector('.add-proj-btn-div-form'));
 
-                document.querySelector('.add-proj-btn-div-form-btn').addEventListener('click', editEleFocus => {
+                document.querySelector('.add-btn-div-form-btn').addEventListener('click', editEleFocus => {
                     document.querySelector('.add-proj-btn-div-form').remove();
                 });
             }

@@ -96,6 +96,20 @@ textarea {
   background-color: #f44336;
 }
 
+.add-proj-btn-div-form {
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+
+  height: 600px;
+  width: 500px;
+
+  grid-template-columns: 90% 10%;
+  grid-template-rows: 50px 1fr;
+  
+  display: grid;
+}
+
 .disp-title {
   margin: 0;
   padding: 20px;
@@ -116,6 +130,23 @@ textarea {
 
 .newEleSpan:hover {
   background-color: #bbb;
+}
+
+.projFormTemplate{
+  position: relative;
+  width: 500px;
+  height: 200px;
+  margin: 0 auto;
+  padding: 1em;
+  box-sizing: border-box;
+  background: #fff;
+
+  /* we create our grid */
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 30px 50px;
+  align-content: center;
 }
 
 .card-container {
