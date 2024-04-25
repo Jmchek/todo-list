@@ -1,7 +1,12 @@
 export default function projectsRemover(someProject) {
+    let storedProj = localStorage.getItem(someProject) || [];
+                
+    if(storedProj.length > 0){
+        storedProj = JSON.parse(storedProj);
+    }
     
-    if (JSON.parse(localStorage.getItem(someProject))) {
-        localStorage.removeItem(someProject.title);
+    if (storedProj && someProject) {
+        localStorage.removeItem(someProject);
     } else {
         throw console.error("Project not found!");
     } 
