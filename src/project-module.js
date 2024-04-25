@@ -84,8 +84,6 @@ export default function projectsModule(project, todos) {
 
         document.querySelector('.proj-button-add').addEventListener('click', x => {
 
-            //working here
-
             if (!document.querySelector('.add-proj-btn-div-form')) {
                 projContGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'add-proj-btn-div-form');
 

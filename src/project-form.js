@@ -14,7 +14,6 @@ export default function projFormMaker(anchor) {
     document.querySelector('[for="title"]').innerText = "Title: ";
   
     //SUBMIT BUTTON
-    // let todoForStor = new Todos();
     formAnchorGrbbr.appendChild(document.createElement('button')).setAttribute('class', 'submitBtn');
     const submitBtnGrbbr = document.querySelector('.submitBtn');
     submitBtnGrbbr.innerText = "Submit";
@@ -28,5 +27,7 @@ export default function projFormMaker(anchor) {
       projectsModule(document.querySelector(".title").value);
 
       addBtnWindowGrbbr.remove();
+
+      document.querySelector('.projects-container').append(document.querySelector('.card-container-add-proj'));
     });
 }
