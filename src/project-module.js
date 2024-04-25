@@ -393,11 +393,15 @@ export default function projectsModule(project, todos) {
 
         latestPrjCard[0].children[2].setAttribute('type', 'button');
         latestPrjCard[0].children[2].setAttribute('value', 'Add Todo');
-        //submit btn for add todo btn
+
         latestPrjCard[0].children[2].addEventListener('click', x => {
 
             if (!document.querySelector('.add-btn-div-form')) {
-                let storedProj = JSON.parse(localStorage.getItem(x.target.parentNode.children[0].innerText));
+                let storedProj = localStorage.getItem(x.target.parentNode.children[0].innerText) || [];
+                
+                if(storedProj.length > 0){
+                    storedProj = JSON.parse(storedProj);
+                }
 
                 projContGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'add-btn-div-form');
 

@@ -1,5 +1,11 @@
 export default function todosStorer(someTodo, keyForUpdating, projName) {
-    let storedProjData = JSON.parse(localStorage.getItem(someTodo.project)) || [];
+    let storedProjData;
+
+    if(localStorage.getItem(someTodo.project)){
+        storedProjData = JSON.parse(localStorage.getItem(someTodo.project)) || [];
+    } else {
+        storedProjData = [];
+    }
     const todoTitle = someTodo.title;
     let found = false;
     let index = 0;
@@ -8,7 +14,11 @@ export default function todosStorer(someTodo, keyForUpdating, projName) {
         storedProjData[keyForUpdating] = someTodo;
         localStorage.setItem(someTodo.project, JSON.stringify(storedProjData));
     } else if (projName){
-        storedProjData = JSON.parse(localStorage.getItem(projName)) || [];
+        if(localStorage.getItem(someTodo.project)){
+            storedProjData = JSON.parse(localStorage.getItem(someTodo.project)) || [];
+        } else {
+            storedProjData = [];
+        }
         storedProjData.push(someTodo);
         localStorage.setItem(projName, JSON.stringify(storedProjData));
     } else {
