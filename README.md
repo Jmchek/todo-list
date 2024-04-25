@@ -84,6 +84,8 @@ DELETE PROJECT SECTION
 
 ADD PROJECT SECTION
 65. we will have to delete the old add project button (or move it somewhere) when adding newer projects
+66. functioning as expected
+67. ERROR when we have multiple cards, deleting a project results in the card being removed but the localStorage remaining unchanged
 
 UX/UI stuff
 1. user opens page to a blank project with a plus icon
