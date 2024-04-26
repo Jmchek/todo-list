@@ -88,6 +88,9 @@ ADD PROJECT SECTION
 67. ERROR when we have multiple cards, deleting a project results in the card being removed but the localStorage remaining unchanged FIXED
 68. MERGING
 
+MORE BUG FIXING
+69. 
+
 UX/UI stuff
 1. user opens page to a blank project with a plus icon
 2. pluc icon clicked, todo object is added in the project and EXPANDED to add details 
