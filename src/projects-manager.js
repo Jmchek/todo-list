@@ -4,7 +4,7 @@ export default function projectsManager() {
 
     let keyFromStorage;
 
-   if (localStorage.length > 1) {
+   if (localStorage.length >= 1) {
     Object.keys(localStorage).forEach(function(key){
         if(localStorage.getItem(key) == []) {
             keyFromStorage = [];

@@ -28,7 +28,7 @@ export default function projFormMaker(anchor) {
 
       addBtnWindowGrbbr.remove();
 
-      document.querySelector('.projects-container').append(document.querySelector('.card-container-add-proj'));
+      document.querySelector('.projects-container').appendChild(document.querySelector('.card-container-add-proj'));
     });
 
     document.querySelector('.title').addEventListener("keypress", function(event) {
