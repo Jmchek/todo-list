@@ -30,4 +30,11 @@ export default function projFormMaker(anchor) {
 
       document.querySelector('.projects-container').append(document.querySelector('.card-container-add-proj'));
     });
+
+    document.querySelector('.title').addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        submitBtnGrbbr.click();
+      }
+    });
 }
