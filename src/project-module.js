@@ -2,6 +2,7 @@ import formMaker from "./form-module";
 import todosRemover from "./todos-remover";
 import projectsRemover from "./projects-remover";
 import projFormMaker from "./project-form";
+import projectsStorer from "./projects-storer";
 
 export default function projectsModule(project, todos) {
 
@@ -9,6 +10,8 @@ export default function projectsModule(project, todos) {
 
     //default project
     if (arguments.length == 0) {
+        projectsStorer("Default");
+        
         projContGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'card-container');
 
         let cardCntr = Array.from(document.querySelectorAll('.card-container'));
@@ -418,6 +421,38 @@ export default function projectsModule(project, todos) {
                 });
             }
         });
+
+         //add project button
+         if(!document.querySelector('.card-container-add-proj')){
+            projContGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'card-container-add-proj');
+
+            document.querySelector('.card-container-add-proj').appendChild(document.createElement('input')).setAttribute('class', 'proj-button-add');
+    
+            document.querySelector('.proj-button-add').setAttribute('type', 'button');
+            document.querySelector('.proj-button-add').setAttribute('value', 'Add Project');
+    
+            document.querySelector('.proj-button-add').addEventListener('click', x => {
+    
+                if (!document.querySelector('.add-proj-btn-div-form')) {
+                    projContGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'add-proj-btn-div-form');
+    
+                    document.querySelector('.add-proj-btn-div-form').appendChild(document.createElement('h3')).setAttribute('class', 'add-btn-div-form-header');
+                    document.querySelector('.add-btn-div-form-header').innerText = "Add a Project";
+    
+                    //close button for add window
+                    document.querySelector('.add-proj-btn-div-form').appendChild(document.createElement('input')).setAttribute('class', 'add-btn-div-form-btn');
+                    document.querySelector('.add-btn-div-form-btn').setAttribute('type', 'button');
+                    document.querySelector('.add-btn-div-form-btn').value = "X";
+    
+                    projFormMaker(document.querySelector('.add-proj-btn-div-form'));
+    
+                    document.querySelector('.add-btn-div-form-btn').addEventListener('click', editEleFocus => {
+                        document.querySelector('.add-proj-btn-div-form').remove();
+                    });
+                }
+                
+            });
+         }
         }       
     }
 }
