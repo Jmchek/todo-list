@@ -56,7 +56,13 @@ export default function projectsModule(project, todos) {
         latestPrjCard[0].children[2].addEventListener('click', x => {
 
             if (!document.querySelector('.add-btn-div-form')) {
-                let storedProj = JSON.parse(localStorage.getItem(x.target.parentNode.children[0].innerText)) || [];
+                let storedProj;
+
+                if(localStorage.getItem(x.target.parentNode.children[0].innerText)){
+                    storedProj = JSON.parse(localStorage.getItem(x.target.parentNode.children[0].innerText));
+                } else {
+                    storedProj = [];
+                }
 
                 projContGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'add-btn-div-form');
 
@@ -404,10 +410,12 @@ export default function projectsModule(project, todos) {
         latestPrjCard[0].children[2].addEventListener('click', x => {
 
             if (!document.querySelector('.add-btn-div-form')) {
-                let storedProj = localStorage.getItem(x.target.parentNode.children[0].innerText) || [];
-                
-                if(storedProj.length > 0){
-                    storedProj = JSON.parse(storedProj);
+                let storedProj;
+
+                if(localStorage.getItem(x.target.parentNode.children[0].innerText)){
+                    storedProj = JSON.parse(localStorage.getItem(x.target.parentNode.children[0].innerText));
+                } else {
+                    storedProj = [];
                 }
 
                 projContGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'add-btn-div-form');
@@ -432,7 +440,7 @@ export default function projectsModule(project, todos) {
          if(document.querySelector('.card-container-add-proj')){
             projContGrbbr.appendChild(document.querySelector('.card-container-add-proj'));
         }
-        
+
          if(!document.querySelector('.card-container-add-proj')){
             projContGrbbr.appendChild(document.createElement('div')).setAttribute('class', 'card-container-add-proj');
 

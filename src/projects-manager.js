@@ -6,11 +6,8 @@ export default function projectsManager() {
 
    if (localStorage.length >= 1) {
     Object.keys(localStorage).forEach(function(key){
-        if(localStorage.getItem(key) == []) {
-            keyFromStorage = [];
-        } else {
-            JSON.parse(keyFromStorage);
-        }
+        keyFromStorage = JSON.parse(localStorage.getItem(key)) || [];
+
         projectsModule(key, keyFromStorage);
      });
    } else {

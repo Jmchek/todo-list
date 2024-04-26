@@ -10,7 +10,7 @@ export default function todosStorer(someTodo, keyForUpdating, projName) {
     let found = false;
     let index = 0;
 
-    if(keyForUpdating){
+    if(keyForUpdating && keyForUpdating != undefined){
         storedProjData[keyForUpdating] = someTodo;
         localStorage.setItem(someTodo.project, JSON.stringify(storedProjData));
     } else if (projName){
